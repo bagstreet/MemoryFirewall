@@ -1,0 +1,95 @@
+{
+  "evidence_status": "offline_plan_only",
+  "checkpoints": [
+    {
+      "stage_id": "01",
+      "revision": "fixture:safe-memory",
+      "goal": "safe memory",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": false,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "02",
+      "revision": "fixture:cold-safe-recall",
+      "goal": "cold safe recall",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": true,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "03",
+      "revision": "fixture:command-detection",
+      "goal": "command detection",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": false,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "04",
+      "revision": "fixture:poison-quarantine",
+      "goal": "poison quarantine",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": true,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "05",
+      "revision": "fixture:grounded-replacement",
+      "goal": "grounded replacement",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": false,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "06",
+      "revision": "fixture:scope-deny",
+      "goal": "scope deny",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": true,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "07",
+      "revision": "fixture:expired-ignore",
+      "goal": "expired ignore",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": false,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "08",
+      "revision": "fixture:conflict-escalation",
+      "goal": "conflict escalation",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": true,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "09",
+      "revision": "fixture:cold-safe-resolution",
+      "goal": "cold safe resolution",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": false,
+      "outcome": "pending_live_receipt"
+    },
+    {
+      "stage_id": "10",
+      "revision": "fixture:redteam-regression",
+      "goal": "redteam regression",
+      "prompt_version": "pending-live",
+      "runtime": "pending-live",
+      "cold_recall": true,
+      "outcome": "pending_live_receipt"
+    }
+  ]
+}
