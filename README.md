@@ -7,3 +7,31 @@ An evolution of [Continuum](https://github.com/alexbelij/Continuum). Memory Fire
 ![Threat control map](./art/threat-map.svg)
 
 Run `make test` for a side-by-side permissive-versus-firewall replay. The project is an offline red-team lab. Ten planned Mainnet checkpoints are in [`evidence/checkpoints.json`](./evidence/checkpoints.json); receipts remain pending until live confirmation.
+
+## Validation matrix
+
+| Domain | Threat | Final firewall behavior | Fixture | Status |
+|---|---|---|---|---|
+| schema/provenance | incomplete event or weak source | deny | `tests/firewall_test.py` | pass |
+| secret-like content | credential-shaped memory | deny | `tests/firewall_test.py` | pass |
+| memory-as-command | instruction/tool directive | quarantine | `tests/firewall_test.py` | pass |
+| scope | cross-project recall | deny | `tests/firewall_test.py` | pass |
+| lifecycle | stale/superseded record | ignore | `tests/firewall_test.py` | pass |
+| contradiction | conflict marker | escalate | `tests/firewall_test.py` | pass |
+| record identity | missing immutable `record_id` | deny (`invalid-schema`) | `tests/firewall_test.py` | pass |
+| candidate-set lifecycle | supersession resolved on a partial view | resolve whole set before scope | `tests/candidates_test.py` | pass |
+| stale-only recall | every candidate superseded/expired | deny `no-current-evidence` | `tests/candidates_test.py` | pass |
+| cross-scope successor | current state exists only out of scope | deny `cross-scope-current-state`, never revive predecessor | `tests/candidates_test.py` | pass |
+| empty recall | apparent absence of state | retry then diagnose | `tests/candidates_test.py` | pass |
+
+## Why candidate-set resolution (before vs after)
+
+**Before:** the firewall validated each recalled record in isolation. A superseded
+record could still be used when its successor was filtered out earlier by scope,
+and an all-stale recall looked identical to "no history."
+
+**After:** `firewall/candidates.py` resolves ID-based supersession and lifecycle
+across the entire recalled set first, then applies scope. Stale-only and
+cross-scope-successor situations now produce explicit denials instead of a
+silent fallback to old state. `tests/candidates_test.py` replays each failure
+that motivated the change.
