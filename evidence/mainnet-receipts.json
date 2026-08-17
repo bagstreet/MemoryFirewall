@@ -1,0 +1,109 @@
+{
+  "status": "confirmed_mainnet_evidence",
+  "network": "mainnet",
+  "project": "Memory Firewall",
+  "confirmed_stage_count": 10,
+  "receipt_rule": "A checkpoint is counted only after MemWal rememberAndWait returns terminal completion with a non-empty blob_id. Job IDs are diagnostic metadata, not storage proof.",
+  "runs": [
+    {
+      "namespace": "walrus-session7/memory-firewall/bagstreet/mainnet-evidence-v2",
+      "health": {
+        "status": "ok",
+        "version": "0.1.0"
+      },
+      "finished_at": "2026-08-17T23:02:29.230Z"
+    }
+  ],
+  "receipts": [
+    {
+      "stage_id": "01",
+      "job_id": "d758110f-21df-4112-a2a4-02eaef42fa47",
+      "blob_id": "xhq7cU2vyXQDqpgyGP2O-1qpCJCmpOC7sdm9ezWQGxU",
+      "idempotency_key_sha256": "cf225fdfedb65999834af4423d3800c591099ead97f2ad39e3ac3ee07b4c6522",
+      "started_at": "2026-08-17T22:57:00.091Z"
+    },
+    {
+      "stage_id": "02",
+      "job_id": "80ab67dd-6a7d-4d55-8961-111da7ee54ad",
+      "blob_id": "rPZ6B966E1cgHryygF_0a2j3QZRccL-ejFqW66L1WPQ",
+      "idempotency_key_sha256": "b72610762b95b6416dca088a3caaa551d61afec947ce63b599b2adb4865d34a7",
+      "started_at": "2026-08-17T22:57:42.425Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 2
+      }
+    },
+    {
+      "stage_id": "03",
+      "job_id": "61e5a21b-9a16-4559-9639-066a0ddd72d8",
+      "blob_id": "YiN1pUAqghSbH0tw2ub6_6caA_0LyT7OrisKHcHjJA0",
+      "idempotency_key_sha256": "3fae313a7de0fc31b8f84abcf9ff8c057abf36d1e24ccd8fe9ee8e173ce7cca4",
+      "started_at": "2026-08-17T22:58:12.723Z"
+    },
+    {
+      "stage_id": "04",
+      "job_id": "e60c0638-2e43-494b-acf5-b208054f9434",
+      "blob_id": "pRl18VTfgldBysp-I2v_codgcBicBe4Aa-aasiCroWI",
+      "idempotency_key_sha256": "452627af486cdd9b6a88fda8e747f46c9bf7f8246a7012d2413afd6c3f9fc59d",
+      "started_at": "2026-08-17T22:58:44.720Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 4
+      }
+    },
+    {
+      "stage_id": "05",
+      "job_id": "cd6ba15a-4705-4afe-9c63-368bed117c0f",
+      "blob_id": "wG2Nd9uJ6SFJCnty4vwFIeHb5Ae0Kp--ZWgpR6zMXvg",
+      "idempotency_key_sha256": "29d74c76296219e3cd92f91598d4476ac9156f8417f388fa0da2936da6eb9d64",
+      "started_at": "2026-08-17T22:59:19.832Z"
+    },
+    {
+      "stage_id": "06",
+      "job_id": "36144525-135a-45b1-be36-546d43c52c49",
+      "blob_id": "SXbRZ2rq955zMj2ovJyfW7F7ub9NejC_HbZXLWp8NwU",
+      "idempotency_key_sha256": "6ff678ca9165634b2b457598f8a79efd67ef2c9186e3d8eb622e95fa43392356",
+      "started_at": "2026-08-17T22:59:41.255Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 6
+      }
+    },
+    {
+      "stage_id": "07",
+      "job_id": "f87c8686-f10a-4b96-a555-9e7aeb4f0e25",
+      "blob_id": "onTB2HtW_9JKF6pJYzjxSzTfUCtevcOhoc_E4HQVvBU",
+      "idempotency_key_sha256": "c8fc862183c26d85a88e175ba9c5b20911800f5647ebf614a71fee67c5478a06",
+      "started_at": "2026-08-17T23:00:06.131Z"
+    },
+    {
+      "stage_id": "08",
+      "job_id": "057b96a4-0b74-4b68-af7c-bb339e6f6395",
+      "blob_id": "srFVJdHSdwnZ-D8kpqN5iOG_vRVjf3ASYTga4iyL06Q",
+      "idempotency_key_sha256": "005ff18059bcfeb92edb9c188e3d773238aadc0e58bc2feb8c2593b5f5ee9839",
+      "started_at": "2026-08-17T23:00:28.791Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 8
+      }
+    },
+    {
+      "stage_id": "09",
+      "job_id": "43f16592-c237-454b-9caf-511d26b1ea8d",
+      "blob_id": "J82fxJVgczNBQuEoF68O9ulciLWi18eJlkWljEXd_ZU",
+      "idempotency_key_sha256": "b9a417e477b5a2d3bab1c136a4fedfdfa3b900b26f162488f4f24fbf06dee6f5",
+      "started_at": "2026-08-17T23:01:06.274Z"
+    },
+    {
+      "stage_id": "10",
+      "job_id": "ba214a23-62a0-455b-8d96-10193c443206",
+      "blob_id": "NVkYPCeVKNrExMvwM4XjyvZCeWoHR3U8_hVOZDey8nw",
+      "idempotency_key_sha256": "b95bcea5c89f521d90759af831625050247da60e8b549900e5f605412ea1f823",
+      "started_at": "2026-08-17T23:01:35.176Z",
+      "cold_recall": {
+        "status": "found",
+        "result_count": 10
+      }
+    }
+  ]
+}
