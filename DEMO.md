@@ -14,4 +14,4 @@ make test
 
 ## Evidence boundary
 
-The lab is local and deterministic. It does not establish live provider behavior or Walrus durability. Show real receipts only after a terminal `blob_id` and independent cold recall are available.
+The lab is local and deterministic. It does not establish live provider behavior or Walrus durability. The receipt-board segment may show the committed terminal `blob_id` records and independent cold recalls. The local lab still does not establish provider behavior or Walrus durability by itself.

@@ -6,7 +6,7 @@ An evolution of [Continuum](https://github.com/alexbelij/Continuum). Memory Fire
 
 ![Threat control map](./art/threat-map.svg)
 
-Run `make test` for a side-by-side permissive-versus-firewall replay. The project is an offline red-team lab. Ten planned Mainnet checkpoints are in [`evidence/checkpoints.json`](./evidence/checkpoints.json); receipts remain pending until live confirmation.
+Run `make test` for a side-by-side permissive-versus-firewall replay. The project is an offline red-team lab. The planning checkpoints are in [`evidence/checkpoints.json`](./evidence/checkpoints.json). Separately, [`evidence/mainnet-receipts.json`](./evidence/mainnet-receipts.json) records **10/10 terminal Mainnet receipts** and fresh-client cold recalls for stages 02, 04, 06, 08, and 10.
 
 ## Validation matrix
 
