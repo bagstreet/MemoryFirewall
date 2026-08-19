@@ -1,5 +1,8 @@
 # Memory Firewall: A Safer Recall Path for Tool-Using Agents
 
+> **Publication status: owner-review draft.** First-person voice and factual
+> claims require adoption and approval by bagstreet before publication.
+
 I evolved Continuum because I wanted memory to preserve useful cross-session context without giving recalled prose the power to direct an agent. A memory store can contain good project knowledge beside stale decisions, text copied from untrusted sources, cross-project notes, and instruction-shaped content. A system that retrieves the highest-scoring passage and treats it as authority has quietly made its memory route an attack route.
 
 **Memory Firewall** treats every recalled candidate as untrusted data first. It validates record shape and provenance, scans nested values for instructions and secret-like material, resolves lifecycle and supersession, then evaluates scope. Only an eligible candidate may inform a response. Tool calls, permissions, credentials, and authorization are never derived from recalled prose. If candidates conflict, the resolver escalates rather than blending them into a confident answer.
