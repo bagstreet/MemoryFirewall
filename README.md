@@ -28,6 +28,7 @@ Run `make test` for a side-by-side permissive-versus-firewall replay. `make demo
 | cross-scope successor | current state exists only out of scope | deny `cross-scope-current-state`, never revive predecessor | `tests/candidates_test.py` | pass |
 | empty recall | apparent absence of state | retry then diagnose | `tests/candidates_test.py` | pass |
 | poison isolation | one hostile record suppressed all candidate recall | quarantine by ID; resolve clean records with per-record dispositions | `tests/candidates_test.py` | pass |
+| repository hygiene | credential-shaped file content | fail the local suite before release | `make secret-scan` | pass |
 
 ## Why candidate-set resolution (before vs after)
 
