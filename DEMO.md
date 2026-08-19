@@ -2,6 +2,7 @@
 
 ```bash
 make test
+make demo
 ```
 
 ## Recording sequence
@@ -14,4 +15,4 @@ make test
 
 ## Evidence boundary
 
-The lab is local and deterministic. It does not establish live provider behavior or Walrus durability. The receipt-board segment may show the committed terminal `blob_id` records and independent cold recalls. The local lab still does not establish provider behavior or Walrus durability by itself.
+The lab is local and deterministic. `make demo` prints a separate committed-manifest summary; it does not make a live write. It does not establish live provider behavior or Walrus durability by itself. The receipt-board segment may show the committed terminal `blob_id` records and independent cold recalls.
