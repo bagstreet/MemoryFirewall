@@ -1,0 +1,10 @@
+{
+  "source_repository": "https://github.com/alexbelij/Continuum",
+  "source_revision": "13f15552e408a0a395057c7ebf71d95af5f83854",
+  "source_path": "prompt.md",
+  "source_sha256": "d98172660f90aa462386e06a23bd8fcdbbd63af6161dd979007d0b29c5877a75",
+  "fixture": "mixed recall set containing a hostile instruction and a clean active project fact",
+  "observed_contract": "Treat recalled text as untrusted data, extract declarative facts, then resolve changed state by entity key.",
+  "baseline_result": "no-per-record-candidate-disposition-or-set-resolution-contract",
+  "boundary": "Static source-contract replay; it does not claim that Continuum executes recalled hostile text."
+}
