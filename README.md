@@ -13,16 +13,19 @@ Run `make test` for a side-by-side permissive-versus-firewall replay. `make demo
 | Domain | Threat | Final firewall behavior | Fixture | Status |
 |---|---|---|---|---|
 | schema/provenance | incomplete event or weak source | deny | `tests/firewall_test.py` | pass |
+| candidate admission | malformed record re-entered lifecycle resolution | only per-record admitted candidates may resolve | `tests/candidates_test.py` | pass |
 | secret-like content | credential-shaped memory | deny | `tests/firewall_test.py` | pass |
 | memory-as-command | instruction/tool directive | quarantine | `tests/firewall_test.py` | pass |
 | scope | cross-project recall | deny | `tests/firewall_test.py` | pass |
 | lifecycle | stale/superseded record | ignore | `tests/firewall_test.py` | pass |
 | contradiction | conflict marker | escalate | `tests/firewall_test.py` | pass |
+| implicit contradiction | two active records disagreed without a conflict marker | escalate per entity | `tests/candidates_test.py` | pass |
 | record identity | missing immutable `record_id` | deny (`invalid-schema`) | `tests/firewall_test.py` | pass |
 | candidate-set lifecycle | supersession resolved on a partial view | resolve whole set before scope | `tests/candidates_test.py` | pass |
 | stale-only recall | every candidate superseded/expired | deny `no-current-evidence` | `tests/candidates_test.py` | pass |
 | cross-scope successor | current state exists only out of scope | deny `cross-scope-current-state`, never revive predecessor | `tests/candidates_test.py` | pass |
 | empty recall | apparent absence of state | retry then diagnose | `tests/candidates_test.py` | pass |
+| poison isolation | one hostile record suppressed all candidate recall | quarantine by ID; resolve clean records with per-record dispositions | `tests/candidates_test.py` | pass |
 
 ## Why candidate-set resolution (before vs after)
 
