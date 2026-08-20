@@ -10,6 +10,17 @@ An evolution of [Continuum](https://github.com/alexbelij/Continuum). Memory Fire
 
 Run `make test` for a side-by-side permissive-versus-firewall replay. `make demo` is the read-only judge path: it contains hostile recalled content and proves that an out-of-scope successor cannot revive a stale predecessor. The unchanged-source comparison is pinned in [`evidence/source-locked-baseline.json`](./evidence/source-locked-baseline.json): Continuum revision `13f1555…`, source file SHA-256 `d9817266…`; its trust boundary has no per-record disposition interface or fail-closed candidate-set adjudication policy. This is a static source-contract comparison, not a claim that a live agent executed a command. The project is an offline red-team lab. The planning checkpoints are in [`evidence/checkpoints.json`](./evidence/checkpoints.json). Separately, [`evidence/mainnet-receipts.json`](./evidence/mainnet-receipts.json) records **10/10 terminal Mainnet receipts** and fresh-client cold recalls for stages 02, 04, 06, 08, and 10.
 
+### Purpose-built synthetic stand
+
+No suitable owner-scoped historical project exists for this entry. The alternative is not unrelated history: [`evidence/synthetic-yield-incident-archive.json`](./evidence/synthetic-yield-incident-archive.json) describes an explicitly **synthetic**, offline four-commit Yield Incident Archive. It is a harmless local-monitoring fixture, not investment advice: verified rule → poisoned command-shaped memory → cross-scope successor → reviewed in-scope correction.
+
+```bash
+git clone evidence/yield-incident-archive.bundle /tmp/yield-incident-archive
+make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/yield-incident-archive
+```
+
+The verifier locks the full graph, author/committer, subjects, immutable IDs, record growth, individual poison disposition, lifecycle outcome at every commit, final usable record, bundle checksum, and prompt hash. Its proof is limited to deterministic local behavior on this synthetic graph; it is not historical owner activity, investment advice, provider behavior, or a new Mainnet write.
+
 ## Validation matrix
 
 | Domain | Threat | Final firewall behavior | Fixture | Status |
