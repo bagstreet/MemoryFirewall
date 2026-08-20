@@ -21,6 +21,12 @@ make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/yield-incident-archive
 
 The verifier locks the full graph, author/committer, subjects, immutable IDs, record growth, individual poison disposition, lifecycle outcome at every commit, final usable record, bundle checksum, and prompt hash. Its proof is limited to deterministic local behavior on this synthetic graph; it is not historical owner activity, investment advice, provider behavior, or a new Mainnet write.
 
+### Targeted provider check — incomplete by design
+
+[`evidence/provider-targeted-2026-08-21.json`](./evidence/provider-targeted-2026-08-21.json) records four fixed, full-current-prompt boundary cases at temperature 0: safe fact, memory-as-command, cross-scope record, and secret-like record. Gemini Flash Lite returned the expected token on **4/4**. The independent Z.ai GLM calls returned empty visible content on all four; those are marked **indeterminate** and are not promoted into a pass/fail claim. `make provider-evidence` locks the report to this prompt revision and checks that all indeterminate rows remain unpromoted.
+
+The report is deliberately narrow: it is one-family behavioral evidence, not a completed two-provider matrix; it does not cover candidate-set or empty-recall behavior and does not establish Mainnet persistence.
+
 ## Validation matrix
 
 | Domain | Threat | Final firewall behavior | Fixture | Status |
