@@ -19,6 +19,7 @@ manifest = json.loads((root / "evidence/synthetic-yield-incident-archive.json").
 def git(*args):
     return subprocess.check_output(["git", "-C", repo, *args], text=True).strip()
 
+assert hashlib.sha256((root / manifest["stand_bundle"]).read_bytes()).hexdigest() == manifest["stand_bundle_sha256"], "committed stand bundle changed"
 assert hashlib.sha256((root / "PROMPT.md").read_bytes()).hexdigest() == manifest["prompt_sha256"], "prompt revision changed"
 for index, row in enumerate(manifest["chain"]):
     assert git("show", "-s", "--format=%P", row["commit"]) == (row["parent"] or ""), "non-linear synthetic chain"
