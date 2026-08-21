@@ -1,17 +1,9 @@
-"use client";
-import {useEffect,useState} from "react";
-const cases=[{name:"Safe candidate",tag:"01",note:"Run the committed safe fixture."},{name:"Memory as command",tag:"02",note:"Run the adversarial fixture."},{name:"Cross-scope successor",tag:"03",note:"Run the boundary fixture."}];
-export default function Page(){
- const [n,setN]=useState(0),[task,setTask]=useState("Review the attached task artifact before acting."),[data,setData]=useState<any>({outcome:"loading"}),[busy,setBusy]=useState(false);
- const run=async(i=n)=>{setBusy(true);setN(i);try{const r=await fetch(`/api/evaluate?scenario=${i}`);setData(await r.json())}catch{setData({outcome:"review",reasons:["Refresh the local policy route before recording this scenario."]})}finally{setBusy(false)}};
- useEffect(()=>{run(0)},[]);
- const raw=String(data.outcome||"checking");
- const safe=/used|applied|accepted|resolved|contained/i.test(raw);
- const outcome=safe ? "Verified workflow" : raw.includes("conflict") ? "Owner review route" : "Protected context";
- const explanation=safe ? "The agent verified this scenario against the committed policy." : "The agent preserved the task boundary and routed this context to its intended safe handling path.";
- return <main className="shell">
- <header className="mast"><div className="brand"><span className="mascot" aria-hidden="true">◖◗</span><div><small>Sentinel Wally</small><b>Containment room</b></div></div><a href="#console">Open agent console ↓</a></header>
- <section className="hero"><div><p className="kicker">WALRUS SESSIONS 7 / READ-ONLY AGENT LAB</p><h1>Memory Firewall</h1><p className="lede">An agent contains nested recalled material before any authorization boundary.</p><p className="boundary">No wallet. No provider key. No storage write. This screen runs committed, deterministic policy fixtures.</p></div><div className="walrus" aria-label="Walrus mascot illustration"><span>◕</span><span>◕</span><i>⌣</i><b>Sentinel Wally</b></div></section>
- <section id="console" className="console"><aside><p className="kicker">MISSION QUEUE</p>{cases.map((x,i)=><button key={x.name} onClick={()=>run(i)} className={i===n?"selected":""}><em>{x.tag}</em><strong>{x.name}</strong><small>{x.note}</small></button>)}<p className="quote">“Memory is evidence, not permission.”</p></aside><article><div className="terminal-head"><span>agent@memoryfirewall:~/workspace</span><span className={busy?"live":"ready"}>{busy?"evaluating":"resolver online"}</span></div><div className="task"><label htmlFor="task">Task / code context</label><textarea id="task" value={task} onChange={e=>setTask(e.target.value)}/><button className="run" onClick={()=>run(n)} disabled={busy}>{busy?"Evaluating…":"Run policy check"}</button><p>This bounded input is displayed for the recording workflow. The decision below is made by the committed scenario fixture and canonical resolver, not a simulated LLM.</p></div><div className={`result ${safe?"safe":"protected"}`}><div><p className="kicker">CANONICAL DECISION</p><h2>{outcome}</h2></div><p>{explanation}</p></div><div className="trace"><h3>What the agent checked</h3><ol><li>Read the bounded task context as untrusted input.</li><li>Ran scenario {String(n+1).padStart(2,"0")} through <code>{data.source||"the canonical resolver"}</code>.</li><li>Recorded the scenario outcome as <b>{outcome}</b> with a reproducible trace.</li></ol></div></article></section>
- <section className="proof"><div><p className="kicker">RECORDING PATH</p><h2>Show the agent work, then prove the boundary.</h2></div><ol><li><code>make test</code><span>Run the deterministic suite.</span></li><li><code>make demo</code><span>Show the same policy workflow in CLI.</span></li><li><code>receipt manifest</code><span>Show committed persistence proof separately.</span></li></ol></section><footer>Memory Firewall · project identity: Sentinel Wally · browser interaction is read-only</footer></main>;
+import Workbench from "./workbench";
+
+// Rendered per request so the CSP nonce from middleware.ts is stamped onto
+// Next's inline bootstrap scripts; a prerendered shell would be script-blocked.
+export const dynamic = "force-dynamic";
+
+export default function Page() {
+  return <Workbench />;
 }

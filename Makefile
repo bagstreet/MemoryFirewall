@@ -14,6 +14,7 @@ secret-scan:
 
 web-parity:
 	PYTHONPATH=. node web/tests/firewall-parity.test.mjs
+	node web/tests/public-labels.test.mjs
 
 synthetic-stand:
 	PYTHONPATH=. python3 scripts/check_synthetic_stand.py

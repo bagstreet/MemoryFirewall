@@ -10,7 +10,7 @@ Memory Firewall evolves the [D&D Campaign Vault](https://github.com/0xanjalii/Ca
 
 ## Try the red-team lab
 
-**Browser:** [open Sentinel Wally](https://memory-firewall-pi.vercel.app) — deterministic, read-only fixture routes.
+**Browser:** [open the containment workbench](https://memory-firewall-pi.vercel.app) — build a candidate set, add an operator note, and watch the canonical resolver decide. Read-only: no wallet, no key, no storage write.
 
 **Local prerequisites:** Python 3.11+ and Node.js 18+ (Node runs the browser/Python parity check).
 
@@ -68,7 +68,7 @@ make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/synthetic-incident-archive
 ```text
 firewall/       Python record admission and candidate-set resolver
 tests/          deterministic Python regression and synthetic-stand checks
-web/            Sentinel Wally lab plus Python/JS fixture parity test
+web/            containment workbench lab plus Python/JS fixture parity test
 evidence/       source lock, synthetic stand, checkpoints and receipt records
 art/            threat-control visual
 PROMPT.md       copy-pasteable evolved system prompt
