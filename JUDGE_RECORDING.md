@@ -14,14 +14,14 @@ Candidate-set containment keeps each recalled record in its own explicit handlin
 - Do not show a blob ID as fresh evidence without a recorded fresh terminal run and independent read.
 
 | Time | Screen / narration |
-|---|---|
+
+| 0:00–0:10 | State: “One recalled record must not control or erase a candidate set.” |
 | 0:10–0:24 | Open the [interactive verification lab](https://memory-firewall-pi.vercel.app); open Sentinel Wally, enter the memory context, select a containment route, and keep its resolver trace visible. |
-| 0:00–0:10 | State: “One poisoned memory must not control or erase a candidate set.” |
-| 0:10–0:26 | Run `make demo`; show a valid scoped record separately from a hostile record. |
-| 0:26–0:42 | Show the containment route assigned by immutable ID, not followed or silently blended. |
-| 0:42–0:57 | Show cross-scope successor and stale-predecessor handling as a named containment route. |
-| 0:57–1:12 | Fresh-clone Synthetic Incident Archive and run `make synthetic-stand`. |
-| 1:12–1:25 | Show committed receipt board and say the evidence boundary. |
+| 0:24–0:38 | Run `make demo`; show a valid scoped record separately from a hostile record. |
+| 0:38–0:50 | Show the containment route assigned by immutable ID, not followed or silently blended. |
+| 0:50–1:03 | Show cross-scope successor and stale-predecessor handling as a named containment route. |
+| 1:03–1:16 | Fresh-clone Synthetic Incident Archive and run `make synthetic-stand`. |
+| 1:16–1:25 | Show committed receipt board and say the evidence boundary. |
 
 ## On-screen claim
 

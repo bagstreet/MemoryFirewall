@@ -8,11 +8,11 @@
 
 **Runnable proof:** Run `make test && make demo && make synthetic-stand`; poison is quarantined by ID and a clean candidate remains independently resolvable.
 
-**Evolved prompt:** [`PROMPT.md`](./PROMPT.md)  
-**Source prompt:** https://github.com/alexbelij/Continuum  
-**Deterministic/Mainnet evidence manifest:** [`evidence/mainnet-receipts.json`](./evidence/mainnet-receipts.json)  
-**Article draft:** [`ARTICLE.md`](./ARTICLE.md)  
-**Source feedback draft:** [`ISSUE.md`](./ISSUE.md)  
+**Evolved prompt:** [`PROMPT.md`](./PROMPT.md)
+**Source prompt:** https://github.com/0xanjalii/Campaign-Vault/blob/main/dnd-dm-assistant.md
+**Deterministic/Mainnet evidence manifest:** [`evidence/mainnet-receipts.json`](./evidence/mainnet-receipts.json)
+**Article draft:** [`ARTICLE.md`](./ARTICLE.md)
+**Source feedback draft:** [`ISSUE.md`](./ISSUE.md)
 **Video runbook:** [`DEMO.md`](./DEMO.md)
 
 ## Evidence boundary

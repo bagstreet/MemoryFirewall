@@ -2,7 +2,7 @@
 
 > **A memory-enabled agent must not execute what memory tells it to do.**
 
-An evolution of [Continuum](https://github.com/alexbelij/Continuum). Memory Firewall uses a security-lab model to defend against memory-as-command, poisoning, scope escape, stale entries, and conflict.
+An evolution of [D&D Campaign Vault](https://github.com/0xanjalii/Campaign-Vault). The source prompt remembers campaign state in one namespace; Memory Firewall adds a security-lab control plane for command-shaped recall, poisoning, scope escape, stale entries, and conflict.
 
 **Mechanism:** *candidate-set resolution/control plane.* It reconciles the full recalled set into current, scoped, explainable dispositions; hostile records are quarantined by ID without silently erasing clean candidates.
 
@@ -16,7 +16,7 @@ An evolution of [Continuum](https://github.com/alexbelij/Continuum). Memory Fire
 
 The browser lab is a read-only, deterministic view of the project’s published policy scenarios. It does not create a Mainnet write; committed receipt and fresh-client proof remain separate evidence.
 
-Run `make test` for a side-by-side permissive-versus-firewall replay. `make demo` is the read-only judge path: it contains hostile recalled content and proves that an out-of-scope successor cannot revive a stale predecessor. The unchanged-source comparison is pinned in [`evidence/source-locked-baseline.json`](./evidence/source-locked-baseline.json): Continuum revision `13f1555…`, source file SHA-256 `d9817266…`; its trust boundary has no per-record disposition interface or fail-closed candidate-set adjudication policy. This is a static source-contract comparison, not a claim that a live agent executed a command. The project is an offline red-team lab. The planning checkpoints are in [`evidence/checkpoints.json`](./evidence/checkpoints.json). Separately, [`evidence/mainnet-receipts.json`](./evidence/mainnet-receipts.json) records **10/10 terminal Mainnet receipts** and fresh-client cold recalls for stages 02, 04, 06, 08, and 10.
+Run `make test` for a side-by-side permissive-versus-firewall replay. `make demo` is the read-only judge path: it contains hostile recalled content and proves that an out-of-scope successor cannot revive a stale predecessor. The unchanged-source comparison is pinned in [`evidence/source-locked-baseline.json`](./evidence/source-locked-baseline.json): D&D Campaign Vault revision `d842c98…`, source file SHA-256 `bb6d1e66…`; its recall-and-synthesize contract has no per-record disposition interface or fail-closed candidate-set adjudication policy. This is a static source-contract comparison, not a claim that a live agent executed a command. The project is an offline red-team lab. The planning checkpoints are in [`evidence/checkpoints.json`](./evidence/checkpoints.json). Separately, [`evidence/mainnet-receipts.json`](./evidence/mainnet-receipts.json) records **10/10 terminal Mainnet receipts** and fresh-client cold recalls for stages 02, 04, 06, 08, and 10.
 
 ### Purpose-built synthetic stand
 
