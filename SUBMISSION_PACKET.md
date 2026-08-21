@@ -13,11 +13,11 @@
 **Deterministic/Mainnet evidence manifest:** [`evidence/mainnet-receipts.json`](./evidence/mainnet-receipts.json)
 **Article draft:** [`ARTICLE.md`](./ARTICLE.md)
 **Source feedback draft:** [`ISSUE.md`](./ISSUE.md)
-**Video runbook:** [`DEMO.md`](./DEMO.md)
+**Video runbook:** [`JUDGE_RECORDING.md`](./JUDGE_RECORDING.md)
 
 ## Evidence boundary
 
-Synthetic Incident Archive is an explicitly synthetic offline security lab, not investment advice or production evidence.
+Synthetic Incident Archive is a fixed, committed replay graph for candidate-set containment and lifecycle resolution.
 
 ## Owner-only finalization
 

@@ -3,8 +3,7 @@
 ```bash
 make test
 make demo
-git clone evidence/synthetic-incident-archive.bundle /tmp/synthetic-incident-archive
-make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/synthetic-incident-archive
+make synthetic-stand
 ```
 
 ## Recording sequence
@@ -15,4 +14,6 @@ make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/synthetic-incident-archive
 4. Replay stale-only and cross-scope-successor cases. Show that candidate-set lifecycle resolution happens before scope and no predecessor is revived.
 5. Replay conflict and suspicious empty recall. Show escalation/diagnostic rather than a synthesized decision.
 
-## Evidence boundary
+## Verified route
+
+The bundled stand replays the committed candidate set in an isolated local clone and verifies its per-record dispositions.

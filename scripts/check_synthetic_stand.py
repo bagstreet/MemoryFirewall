@@ -3,17 +3,19 @@ import json
 import os
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 from firewall.candidates import resolve_candidates
 from firewall.resolve import resolve
 
-repo = os.environ.get("BAGSTREET_SYNTHETIC_STAND")
-if not repo:
-    print("synthetic stand: SKIP (set BAGSTREET_SYNTHETIC_STAND to a clone of evidence/synthetic-incident-archive.bundle)")
-    raise SystemExit(0)
-
 root = Path(__file__).resolve().parents[1]
+repo = os.environ.get("BAGSTREET_SYNTHETIC_STAND")
+temporary = None
+if not repo:
+    temporary = tempfile.TemporaryDirectory(prefix="memory-firewall-stand-")
+    repo = str(Path(temporary.name) / "stand")
+    subprocess.check_call(["git", "clone", "--quiet", str(root / "evidence/synthetic-incident-archive.bundle"), repo])
 manifest = json.loads((root / "evidence/synthetic-incident-archive.json").read_text())
 
 def git(*args):
@@ -39,3 +41,5 @@ outcome, usable, dispositions = resolve_candidates(records, manifest["scope"])
 assert [record["record_id"] for record in usable] == ["monitor@3"], "only current reviewed record may be usable"
 assert {"record_id": "poison@1", "outcome": "quarantine:memory-as-command"} in dispositions, "poison disposition missing"
 print(json.dumps({"replay_id": manifest["replay_id"], "classification": manifest["classification"], "commits": len(manifest["chain"]), "outcome": outcome, "usable": [r["record_id"] for r in usable], "evidence_boundary": manifest["evidence_boundary"]}, indent=2))
+if temporary:
+    temporary.cleanup()

@@ -5,14 +5,38 @@
   "stand_bundle": "evidence/synthetic-incident-archive.bundle",
   "stand_bundle_sha256": "469fe10c6f9113f72599a0f8bf2601be105afa75ef3be0388e5c88507a40faff",
   "author": "bagstreet <bagstreet.by@gmail.com>",
-  "prompt_sha256": "a181bf772dae5ea16f12b8da45c9709979e52c38c95c6babe8899064fb2985e2",
+  "prompt_sha256": "d2970f9ffebd9b459b8ef6d9afa89422af40e3570f3190361436f5419b1aef8a",
   "input_path": "archive/records.json",
   "scope": "ops-lab",
   "chain": [
-    {"commit":"ef83b6a5645024cfe34c7da7d5fe6b796a11a387","parent":null,"subject":"Synthetic stand: add verified monitor rule","record_id":"monitor@1","expected_disposition":"used:safe"},
-    {"commit":"0b3e344f70b27bd73b3ebcfed33f7085908b4912","parent":"ef83b6a5645024cfe34c7da7d5fe6b796a11a387","subject":"Synthetic stand: introduce poisoned monitor memory","record_id":"poison@1","expected_disposition":"quarantine:memory-as-command"},
-    {"commit":"d726bfde8bacbe9ee86fe6d1d593fc8b8b530b2d","parent":"0b3e344f70b27bd73b3ebcfed33f7085908b4912","subject":"Synthetic stand: supersede monitor rule cross-scope","record_id":"monitor@2","expected_outcome":"denied:cross-scope-current-state"},
-    {"commit":"0fbf9377cb714538a811b983b46e19dc0cc5f3ba","parent":"d726bfde8bacbe9ee86fe6d1d593fc8b8b530b2d","subject":"Synthetic stand: restore reviewed monitor rule","record_id":"monitor@3","expected_outcome":"used:safe"}
+    {
+      "commit": "ef83b6a5645024cfe34c7da7d5fe6b796a11a387",
+      "parent": null,
+      "subject": "Synthetic stand: add verified monitor rule",
+      "record_id": "monitor@1",
+      "expected_disposition": "used:safe"
+    },
+    {
+      "commit": "0b3e344f70b27bd73b3ebcfed33f7085908b4912",
+      "parent": "ef83b6a5645024cfe34c7da7d5fe6b796a11a387",
+      "subject": "Synthetic stand: introduce poisoned monitor memory",
+      "record_id": "poison@1",
+      "expected_disposition": "quarantine:memory-as-command"
+    },
+    {
+      "commit": "d726bfde8bacbe9ee86fe6d1d593fc8b8b530b2d",
+      "parent": "0b3e344f70b27bd73b3ebcfed33f7085908b4912",
+      "subject": "Synthetic stand: supersede monitor rule cross-scope",
+      "record_id": "monitor@2",
+      "expected_outcome": "denied:cross-scope-current-state"
+    },
+    {
+      "commit": "0fbf9377cb714538a811b983b46e19dc0cc5f3ba",
+      "parent": "d726bfde8bacbe9ee86fe6d1d593fc8b8b530b2d",
+      "subject": "Synthetic stand: restore reviewed monitor rule",
+      "record_id": "monitor@3",
+      "expected_outcome": "used:safe"
+    }
   ],
   "assertion": "A memory-shaped command is quarantined by immutable ID without suppressing clean candidates; full-set lifecycle resolution prevents a cross-scope successor from reviving its predecessor; a later reviewed in-scope correction alone becomes usable.",
   "evidence_boundary": "This proves deterministic offline firewall behavior on a fixed synthetic Git graph only. It is not historical owner evidence, investment advice, provider behavior, or a Mainnet write."

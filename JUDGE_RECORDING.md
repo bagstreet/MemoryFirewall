@@ -20,7 +20,7 @@ Candidate-set containment keeps each recalled record in its own explicit handlin
 | 0:24–0:38 | Run `make demo`; show a valid scoped record separately from a hostile record. |
 | 0:38–0:50 | Show the containment route assigned by immutable ID, not followed or silently blended. |
 | 0:50–1:03 | Show cross-scope successor and stale-predecessor handling as a named containment route. |
-| 1:03–1:16 | Fresh-clone Synthetic Incident Archive and run `make synthetic-stand`. |
+| 1:03–1:16 | Run `make synthetic-stand`; it replays Synthetic Incident Archive in an isolated local clone. |
 | 1:16–1:25 | Show committed receipt board and say the evidence boundary. |
 
 ## On-screen claim
@@ -29,7 +29,7 @@ Candidate-set containment keeps each recalled record in its own explicit handlin
 
 ## Mandatory last line
 
-> Synthetic Incident Archive is a harmless synthetic offline security lab, not investment advice, production evidence, or a live write.
+> Synthetic Incident Archive verifies containment over a fixed, committed candidate history; the receipt board remains a separate evidence layer.
 
 ## Recording check
 
