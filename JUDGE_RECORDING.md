@@ -15,6 +15,7 @@ A poisoned record can be interpreted as a command—or a global failure can supp
 
 | Time | Screen / narration |
 |---|---|
+| 0:10–0:24 | Open the [interactive verification lab](https://memory-firewall-bagstreet.vercel.app); select the unsafe or adversarial scenario and keep its resolver trace visible. |
 | 0:00–0:10 | State: “One poisoned memory must not control or erase a candidate set.” |
 | 0:10–0:26 | Run `make demo`; show a valid scoped record separately from a hostile record. |
 | 0:26–0:42 | Show the hostile record quarantined by immutable ID, not followed or silently blended. |
