@@ -17,7 +17,7 @@
 
 ## Evidence boundary
 
-Yield Incident Archive is an explicitly synthetic offline security lab, not investment advice or production evidence.
+Synthetic Incident Archive is an explicitly synthetic offline security lab, not investment advice or production evidence.
 
 ## Owner-only finalization
 

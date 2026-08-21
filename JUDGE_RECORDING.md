@@ -20,7 +20,7 @@ A poisoned record can be interpreted as a command—or a global failure can supp
 | 0:10–0:26 | Run `make demo`; show a valid scoped record separately from a hostile record. |
 | 0:26–0:42 | Show the hostile record quarantined by immutable ID, not followed or silently blended. |
 | 0:42–0:57 | Show cross-scope successor/stale predecessor behavior and named denial. |
-| 0:57–1:12 | Fresh-clone Yield Incident Archive and run `make synthetic-stand`. |
+| 0:57–1:12 | Fresh-clone Synthetic Incident Archive and run `make synthetic-stand`. |
 | 1:12–1:25 | Show committed receipt board and say the evidence boundary. |
 
 ## On-screen claim
@@ -29,7 +29,7 @@ A poisoned record can be interpreted as a command—or a global failure can supp
 
 ## Mandatory last line
 
-> Yield Incident Archive is a harmless synthetic offline security lab, not investment advice, production evidence, or a live write.
+> Synthetic Incident Archive is a harmless synthetic offline security lab, not investment advice, production evidence, or a live write.
 
 ## Recording check
 

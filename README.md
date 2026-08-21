@@ -20,11 +20,11 @@ Run `make test` for a side-by-side permissive-versus-firewall replay. `make demo
 
 ### Purpose-built synthetic stand
 
-No suitable owner-scoped historical project exists for this entry. The alternative is not unrelated history: [`evidence/synthetic-yield-incident-archive.json`](./evidence/synthetic-yield-incident-archive.json) describes an explicitly **synthetic**, offline four-commit Yield Incident Archive. It is a harmless local-monitoring fixture, not investment advice: verified rule → poisoned command-shaped memory → cross-scope successor → reviewed in-scope correction.
+No suitable owner-scoped historical project exists for this entry. The alternative is not unrelated history: [`evidence/synthetic-incident-archive.json`](./evidence/synthetic-incident-archive.json) describes an explicitly **synthetic**, offline four-commit Synthetic Incident Archive. It is a harmless local-monitoring fixture, not investment advice: verified rule → poisoned command-shaped memory → cross-scope successor → reviewed in-scope correction.
 
 ```bash
-git clone evidence/yield-incident-archive.bundle /tmp/yield-incident-archive
-make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/yield-incident-archive
+git clone evidence/synthetic-incident-archive.bundle /tmp/synthetic-incident-archive
+make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/synthetic-incident-archive
 ```
 
 

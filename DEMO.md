@@ -3,8 +3,8 @@
 ```bash
 make test
 make demo
-git clone evidence/yield-incident-archive.bundle /tmp/yield-incident-archive
-make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/yield-incident-archive
+git clone evidence/synthetic-incident-archive.bundle /tmp/synthetic-incident-archive
+make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/synthetic-incident-archive
 ```
 
 ## Recording sequence

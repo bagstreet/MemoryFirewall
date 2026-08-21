@@ -2,7 +2,7 @@
   "replay_id": "MF-SYN-INCIDENT-01",
   "classification": "purpose-built synthetic demo stand",
   "synthetic_notice": "Created solely as an offline Memory Firewall candidate-set fixture. It contains no production finance activity, investment advice, historical owner activity, provider behavior, or Mainnet operation.",
-  "stand_bundle": "evidence/yield-incident-archive.bundle",
+  "stand_bundle": "evidence/synthetic-incident-archive.bundle",
   "stand_bundle_sha256": "469fe10c6f9113f72599a0f8bf2601be105afa75ef3be0388e5c88507a40faff",
   "author": "bagstreet <bagstreet.by@gmail.com>",
   "prompt_sha256": "a181bf772dae5ea16f12b8da45c9709979e52c38c95c6babe8899064fb2985e2",

@@ -10,11 +10,11 @@ from firewall.resolve import resolve
 
 repo = os.environ.get("BAGSTREET_SYNTHETIC_STAND")
 if not repo:
-    print("synthetic stand: SKIP (set BAGSTREET_SYNTHETIC_STAND to a clone of evidence/yield-incident-archive.bundle)")
+    print("synthetic stand: SKIP (set BAGSTREET_SYNTHETIC_STAND to a clone of evidence/synthetic-incident-archive.bundle)")
     raise SystemExit(0)
 
 root = Path(__file__).resolve().parents[1]
-manifest = json.loads((root / "evidence/synthetic-yield-incident-archive.json").read_text())
+manifest = json.loads((root / "evidence/synthetic-incident-archive.json").read_text())
 
 def git(*args):
     return subprocess.check_output(["git", "-C", repo, *args], text=True).strip()
