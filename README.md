@@ -27,6 +27,12 @@ The verifier locks the full graph, author/committer, subjects, immutable IDs, re
 
 The report is deliberately narrow: it is one-family behavioral evidence, not a completed two-provider matrix; it does not cover candidate-set or empty-recall behavior and does not establish Mainnet persistence.
 
+## Independent provider matrix
+
+[`evidence/provider-matrix-2026-08-21.json`](./evidence/provider-matrix-2026-08-21.json) runs the same fixed boundary fixtures against two independent API families at temperature 0: Google Gemini Flash Lite and NVIDIA NIM Llama 3.1 8B Instruct. Raw model text is not committed; the report retains exact returned decision tokens and response SHA-256 values, locks the prompt SHA-256, and `make provider-matrix` structurally verifies coverage.
+
+This layer is **complete as coverage, not as a universal pass claim**. Gemini produced the expected token for the recorded fixtures except where an explicit classification says otherwise. NVIDIA NIM returned non-transport results for the same fixtures, and its deviations are preserved as deviations rather than erased, treated as deterministic failures, or promoted to Mainnet evidence. The report proves neither provider follows the policy generally; it makes the provider boundary inspectable alongside the deterministic test suite.
+
 ## Validation matrix
 
 | Domain | Threat | Final firewall behavior | Fixture | Status |

@@ -1,4 +1,7 @@
-.PHONY: evidence-check demo test synthetic-stand provider-evidence
+.PHONY: provider-matrix  evidence-check demo test synthetic-stand provider-evidence
+provider-matrix:
+	PYTHONPATH=. python3 scripts/check_provider_matrix.py evidence/provider-matrix-2026-08-21.json PROMPT.md
+
 test: evidence-check secret-scan
 	PYTHONPATH=. python3 tests/firewall_test.py
 	PYTHONPATH=. python3 tests/candidates_test.py
