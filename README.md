@@ -27,6 +27,10 @@ The verifier locks the full graph, author/committer, subjects, immutable IDs, re
 
 The report is deliberately narrow: it is one-family behavioral evidence, not a completed two-provider matrix; it does not cover candidate-set or empty-recall behavior and does not establish Mainnet persistence.
 
+## Owner submission packet
+
+[`SUBMISSION_PACKET.md`](./SUBMISSION_PACKET.md) is the owner-only closeout gate: one-page judge path, source-feedback draft, article/social/video links, dedicated Sessions-wallet proof, and final-form checklist. It distinguishes preparation from actions that only the corresponding owner may take.
+
 ## Independent provider matrix
 
 [`evidence/provider-matrix-2026-08-21.json`](./evidence/provider-matrix-2026-08-21.json) runs the same fixed boundary fixtures against two independent API families at temperature 0: Google Gemini Flash Lite and NVIDIA NIM Llama 3.1 8B Instruct. Raw model text is not committed; the report retains exact returned decision tokens and response SHA-256 values, locks the prompt SHA-256, and `make provider-matrix` structurally verifies coverage.
