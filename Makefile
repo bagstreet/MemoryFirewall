@@ -1,4 +1,4 @@
-.PHONY: evidence-check demo test synthetic-stand
+.PHONY: evidence-check demo test synthetic-stand secret-scan web-parity
 test: evidence-check secret-scan web-parity
 	PYTHONPATH=. python3 tests/firewall_test.py
 	PYTHONPATH=. python3 tests/candidates_test.py
