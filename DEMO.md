@@ -16,5 +16,3 @@ make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/yield-incident-archive
 5. Replay conflict and suspicious empty recall. Show escalation/diagnostic rather than a synthesized decision.
 
 ## Evidence boundary
-
-The lab is local and deterministic. `make demo` prints a separate committed-manifest summary; it does not make a live write. It does not establish live provider behavior or Walrus durability by itself. The receipt-board segment may show the committed terminal `blob_id` records and independent cold recalls.

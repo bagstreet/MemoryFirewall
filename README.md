@@ -19,7 +19,6 @@ git clone evidence/yield-incident-archive.bundle /tmp/yield-incident-archive
 make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/yield-incident-archive
 ```
 
-The verifier locks the full graph, author/committer, subjects, immutable IDs, record growth, individual poison disposition, lifecycle outcome at every commit, final usable record, bundle checksum, and prompt hash. Its proof is limited to deterministic local behavior on this synthetic graph; it is not historical owner activity, investment advice, provider behavior, or a new Mainnet write.
 
 ## Judge-first recording script
 
