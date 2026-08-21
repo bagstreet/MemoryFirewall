@@ -21,12 +21,6 @@ make synthetic-stand BAGSTREET_SYNTHETIC_STAND=/tmp/yield-incident-archive
 
 The verifier locks the full graph, author/committer, subjects, immutable IDs, record growth, individual poison disposition, lifecycle outcome at every commit, final usable record, bundle checksum, and prompt hash. Its proof is limited to deterministic local behavior on this synthetic graph; it is not historical owner activity, investment advice, provider behavior, or a new Mainnet write.
 
-### Targeted provider check — incomplete by design
-
-[`evidence/provider-targeted-2026-08-21.json`](./evidence/provider-targeted-2026-08-21.json) records four fixed, full-current-prompt boundary cases at temperature 0: safe fact, memory-as-command, cross-scope record, and secret-like record. Gemini Flash Lite returned the expected token on **4/4**. The independent Z.ai GLM calls returned empty visible content on all four; those are marked **indeterminate** and are not promoted into a pass/fail claim. `make provider-evidence` locks the report to this prompt revision and checks that all indeterminate rows remain unpromoted.
-
-The report is deliberately narrow: it is one-family behavioral evidence, not a completed two-provider matrix; it does not cover candidate-set or empty-recall behavior and does not establish Mainnet persistence.
-
 ## Judge-first recording script
 
 [`JUDGE_RECORDING.md`](./JUDGE_RECORDING.md) is the 85–90 second CLI-first recording plan: observed failure → deterministic guard → reproducible assertion → explicit evidence boundary. It deliberately avoids credentials and cost-bearing writes.
@@ -34,12 +28,6 @@ The report is deliberately narrow: it is one-family behavioral evidence, not a c
 ## Owner submission packet
 
 [`SUBMISSION_PACKET.md`](./SUBMISSION_PACKET.md) is the owner-only closeout gate: one-page judge path, source-feedback draft, article/social/video links, dedicated Sessions-wallet proof, and final-form checklist. It distinguishes preparation from actions that only the corresponding owner may take.
-
-## Independent provider matrix
-
-[`evidence/provider-matrix-2026-08-21.json`](./evidence/provider-matrix-2026-08-21.json) runs the same fixed boundary fixtures against two independent API families at temperature 0: Google Gemini Flash Lite and NVIDIA NIM Llama 3.1 8B Instruct. Raw model text is not committed; the report retains exact returned decision tokens and response SHA-256 values, locks the prompt SHA-256, and `make provider-matrix` structurally verifies coverage.
-
-This layer is **complete as coverage, not as a universal pass claim**. Gemini produced the expected token for the recorded fixtures except where an explicit classification says otherwise. NVIDIA NIM returned non-transport results for the same fixtures, and its deviations are preserved as deviations rather than erased, treated as deterministic failures, or promoted to Mainnet evidence. The report proves neither provider follows the policy generally; it makes the provider boundary inspectable alongside the deterministic test suite.
 
 ## Validation matrix
 

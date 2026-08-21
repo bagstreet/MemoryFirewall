@@ -11,7 +11,6 @@ A poisoned record can be interpreted as a command—or a global failure can supp
 - Duration target: **85 seconds**.
 - Use the repository’s real read-only commands only. Start with `make test` off-screen or briefly show its PASS summary.
 - Keep the baseline failure, evolved assertion, and evidence boundary in the same uninterrupted run.
-- Do not show raw provider output. `make provider-matrix` is optional reviewer evidence: it documents two-family coverage and deviations, not a model-security pass.
 - Do not show a blob ID as fresh evidence without a recorded fresh terminal run and independent read.
 
 | Time | Screen / narration |
