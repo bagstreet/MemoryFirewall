@@ -1,7 +1,7 @@
 import "./style.css";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
- metadataBase: new URL("https://memory-firewall-bagstreet.vercel.app"),
+ metadataBase: new URL("https://memory-firewall-pi.vercel.app"),
  title: "Memory Firewall | Walrus Sessions 7", description: "An agent workflow that contains hostile recalled memory before it can authorize action.",
  icons: { icon: "/icon.svg" },
  openGraph: { title: "Memory Firewall | Walrus Sessions 7", description: "An agent workflow that contains hostile recalled memory before it can authorize action.", images: [{url:"/og.svg", width:1200, height:630, alt:"Memory Firewall | Walrus Sessions 7"}] },

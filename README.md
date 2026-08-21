@@ -11,7 +11,7 @@ An evolution of [Continuum](https://github.com/alexbelij/Continuum). Memory Fire
 
 ## Interactive verification lab
 
-**Run in browser:** [interactive verification lab](https://memory-firewall-bagstreet.vercel.app)  
+**Run in browser:** [interactive verification lab](https://memory-firewall-pi.vercel.app)
 **Reproduce locally:** `make test && make demo`
 
 The browser lab is a read-only, deterministic view of the project’s published policy scenarios. It does not create a Mainnet write; committed receipt and fresh-client proof remain separate evidence.

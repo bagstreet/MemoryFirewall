@@ -15,7 +15,7 @@ Candidate-set containment keeps each recalled record in its own explicit handlin
 
 | Time | Screen / narration |
 |---|---|
-| 0:10–0:24 | Open the [interactive verification lab](https://memory-firewall-bagstreet.vercel.app); open Sentinel Wally, enter the memory context, select a containment route, and keep its resolver trace visible. |
+| 0:10–0:24 | Open the [interactive verification lab](https://memory-firewall-pi.vercel.app); open Sentinel Wally, enter the memory context, select a containment route, and keep its resolver trace visible. |
 | 0:00–0:10 | State: “One poisoned memory must not control or erase a candidate set.” |
 | 0:10–0:26 | Run `make demo`; show a valid scoped record separately from a hostile record. |
 | 0:26–0:42 | Show the containment route assigned by immutable ID, not followed or silently blended. |
