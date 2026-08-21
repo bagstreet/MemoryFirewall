@@ -72,3 +72,7 @@ across the entire recalled set first, then applies scope. Stale-only and
 cross-scope-successor situations now produce explicit denials instead of a
 silent fallback to old state. `tests/candidates_test.py` replays each failure
 that motivated the change.
+
+## Current SDK proof
+
+A current official-SDK write → terminal non-empty `blob_id` → destroy → new-client exact recall is recorded in [`evidence/live-sdk-proof-2026-08-21.json`](./evidence/live-sdk-proof-2026-08-21.json). It validates the SDK path separately from the ten-checkpoint manifest.
