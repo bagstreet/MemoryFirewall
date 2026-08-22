@@ -111,13 +111,13 @@ export default function Workbench() {
           </div>
           <figure className="hero-mascot">
             <Image
-              src="/mascot-peace.png"
-              alt="The Walrus mascot in a headset, raising a two-finger peace sign beside the containment workbench."
+              src="/memory-firewall-filter.png"
+              alt="A blue paper-cut operator routes safe records through a layered filter while hostile shapes remain outside."
               width={420}
               height={420}
               priority
             />
-            <figcaption>Official Walrus mascot, used as the lab host.</figcaption>
+            <figcaption>Candidate-set control plane</figcaption>
           </figure>
         </section>
 
