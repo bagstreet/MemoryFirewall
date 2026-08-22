@@ -1,5 +1,5 @@
 .PHONY: evidence-check demo test synthetic-stand secret-scan web-parity
-test: evidence-check secret-scan web-parity
+test: prompt-contract  evidence-check secret-scan web-parity
 	PYTHONPATH=. python3 tests/firewall_test.py
 	PYTHONPATH=. python3 tests/candidates_test.py
 	PYTHONPATH=. python3 tests/synthetic_stand_test.py
@@ -18,3 +18,6 @@ web-parity:
 
 synthetic-stand:
 	PYTHONPATH=. python3 scripts/check_synthetic_stand.py
+
+prompt-contract:
+	node tests/prompt-contract.test.mjs
