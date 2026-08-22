@@ -107,29 +107,42 @@ export default function Workbench() {
 
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <p className="eyebrow">Walrus Sessions 7 · read-only agent lab</p>
-            <h1 id="hero-title">Recalled memory is handled as material, not as instructions.</h1>
-            <p className="lede">
-              Memory Firewall takes a whole semantic recall set, presses each candidate through one canonical resolver,
-              and shows which records may enter the working context — before anything reaches an action boundary.
-            </p>
-            <ul className="hero-facts">
-              <li>No wallet, no provider key, no storage write from this page.</li>
-              <li>Decisions come from the committed resolver, not from a language model.</li>
-              <li>Persistence proof lives in the repository evidence layer, not in the browser.</li>
-            </ul>
-          </div>
-          <figure className="hero-mascot">
-            <Image
-              src="/memory-firewall-filter.png"
-              alt="A blue paper-cut operator routes safe records through a layered filter while hostile shapes remain outside."
-              width={420}
-              height={420}
-              priority
-            />
+          <p className="eyebrow">Walrus Sessions 7 · read-only agent lab</p>
+          <h1 id="hero-title">Recalled memory is handled as material, not as instructions.</h1>
+          <p className="lede">
+            Memory Firewall takes a whole semantic recall set, presses each candidate through one canonical resolver,
+            and shows which records may enter the working context — before anything reaches an action boundary.
+          </p>
+
+          <figure className="hero-device">
+            <div className="device-shell">
+              <Image
+                src="/memory-firewall-filter.png"
+                alt="A blue paper-cut operator routes safe records through a layered filter while hostile shapes remain outside."
+                width={1024}
+                height={1024}
+                priority
+              />
+            </div>
             <figcaption>Candidate-set control plane</figcaption>
           </figure>
+
+          <ul className="hero-orbs">
+            <li>
+              <strong>4</strong>
+              <span>routes one candidate set can take</span>
+            </li>
+            <li>
+              <strong>10</strong>
+              <span>committed terminal receipt rows</span>
+            </li>
+            <li>
+              <strong>0</strong>
+              <span>wallets, keys or writes on this page</span>
+            </li>
+          </ul>
+
+          <a className="hero-cta" href="#workbench">Open the containment workbench</a>
         </section>
 
         <section id="workbench" className="workbench" aria-labelledby="workbench-title">
