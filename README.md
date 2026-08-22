@@ -98,3 +98,6 @@ For the exact recording sequence, use [`JUDGE_RECORDING.md`](./JUDGE_RECORDING.m
 ## Receipt inventory
 
 [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
+
+**Prompt-to-proof map:** [`docs/PROMPT_TO_TEST.md`](./docs/PROMPT_TO_TEST.md)  
+**Replay receipt:** [`docs/REPLAY_RECEIPT.md`](./docs/REPLAY_RECEIPT.md)  
