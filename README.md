@@ -93,3 +93,8 @@ Memory Firewall is an offline policy lab. It is not an access-control service, s
 For the exact recording sequence, use [`JUDGE_RECORDING.md`](./JUDGE_RECORDING.md). Owner-only form, article, feedback and wallet closeout live in [`SUBMISSION_PACKET.md`](./SUBMISSION_PACKET.md).
 
 *Last verified against commit `13a7bde` before this README revision.*
+
+
+## Receipt inventory
+
+[`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
