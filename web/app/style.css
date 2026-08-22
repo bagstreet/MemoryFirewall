@@ -358,3 +358,9 @@ footer p { margin: 0; }
 @media (prefers-contrast: more) {
   .cards li, .panel, .topbar { outline: 1px solid rgba(29, 35, 64, 0.35); }
 }
+
+/* Run feedback: each evaluation visibly refreshes the containment readout. */
+.readout .reading { margin: 0.8rem 0 0.4rem; font-size: 0.9rem; line-height: 1.55; opacity: 0.92; }
+@keyframes mf-flash { 0% { transform: translateY(-3px); filter: brightness(1.1); } 100% { transform: none; filter: none; } }
+.panel.readout.flash { animation: mf-flash 0.9s ease-out; }
+@media (prefers-reduced-motion: reduce) { .panel.readout.flash { animation: none; } }

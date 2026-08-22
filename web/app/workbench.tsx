@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { CATALOGUE, SCOPES } from "../lib/catalogue.mjs";
 
@@ -50,8 +50,12 @@ export default function Workbench() {
   const [result, setResult] = useState<Result | null>(null);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState<string>("");
+  const [runSeq, setRunSeq] = useState(0);
+  const [ranAt, setRanAt] = useState<string | null>(null);
+  const [flash, setFlash] = useState(false);
+  const readoutRef = useRef<HTMLDivElement>(null);
 
-  const run = useCallback(async (picks: string[], nextScope: string, text: string) => {
+  const run = useCallback(async (picks: string[], nextScope: string, text: string, manual = false) => {
     setBusy(true);
     setNotice("");
     try {
@@ -63,6 +67,13 @@ export default function Workbench() {
       });
       if (!response.ok) throw new Error(String(response.status));
       setResult((await response.json()) as Result);
+      setRunSeq((current) => current + 1);
+      setRanAt(new Date().toLocaleTimeString());
+      setFlash(true);
+      window.setTimeout(() => setFlash(false), 900);
+      if (manual) {
+        readoutRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
     } catch {
       setNotice("The resolver route is not answering right now. Re-run the check, or reproduce the same decision in the CLI below.");
     } finally {
@@ -191,13 +202,19 @@ export default function Workbench() {
                 </p>
               </div>
 
-              <button className="clay run" type="button" onClick={() => void run(selected, scope, note)} disabled={busy}>
+              <button className="clay run" type="button" onClick={() => void run(selected, scope, note, true)} disabled={busy}>
                 {busy ? "Resolving candidate set…" : "Run canonical evaluation"}
               </button>
             </div>
 
-            <div className="panel readout" aria-live="polite">
-              <h3>2 · Canonical evaluation</h3>
+            <div ref={readoutRef} className={flash ? "panel readout flash" : "panel readout"} aria-live="polite">
+              <h3>
+                {busy
+                  ? "2 · Resolving candidate set…"
+                  : ranAt
+                    ? `2 · Canonical evaluation · run ${runSeq} · ${ranAt}`
+                    : "2 · Canonical evaluation"}
+              </h3>
               {notice ? <p className="notice">{notice}</p> : null}
               {result ? (
                 <>
@@ -209,6 +226,12 @@ export default function Workbench() {
                       canonical string <code>{result.canonical_outcome}</code>
                     </p>
                   </div>
+
+                  <p className="reading">
+                    {result.canonical_outcome.startsWith("used")
+                      ? "A clean, current, in-scope record was admitted, so it is allowed to inform the active task."
+                      : "Containment is the intended outcome here: the evolved prompt keeps hostile or stale memory as data and refuses to let it direct the agent."}
+                  </p>
 
                   <ul className="cards">
                     {result.cards.map((card) => (
