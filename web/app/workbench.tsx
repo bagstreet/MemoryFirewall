@@ -178,7 +178,7 @@ export default function Workbench() {
           <a href="#workbench">Workbench</a>
           <a href="#trace">Trace</a>
           <a href="#repro">CLI</a>
-          <a href="#evidence">Evidence</a>
+          <a href="#evidence">Receipt cabinet</a>
         </nav>
       </header>
 
@@ -220,10 +220,6 @@ export default function Workbench() {
             <li>
               <strong>10</strong>
               <span>committed terminal receipt rows</span>
-            </li>
-            <li>
-              <strong>0</strong>
-              <span>wallets, keys or writes on this page</span>
             </li>
           </ul>
 
@@ -324,23 +320,6 @@ export default function Workbench() {
                     <p className="canon">
                       canonical string <code>{result.canonical_outcome}</code>
                     </p>
-                  </div>
-
-                  <div className="compare">
-                    <div className="compare-col before">
-                      <p className="compare-head">Without the evolved prompt</p>
-                      <p>
-                        A long-running session replays its memory verbatim, so one contaminated or directive-shaped
-                        record steers every later turn.
-                      </p>
-                    </div>
-                    <div className="compare-col after">
-                      <p className="compare-head">With the evolved prompt</p>
-                      <p>
-                        Memory passes a funnel of committed checks before reuse: admitted, downgraded or quarantined
-                        with the triggering rule named, and every decision leaves a receipt.
-                      </p>
-                    </div>
                   </div>
 
                   <ol className="pipeline">
@@ -470,8 +449,8 @@ make synthetic-stand  # replays the pinned candidate-set corpus in isolation
               <span>The terminal capture procedure and its cold-client verification steps.</span>
             </li>
             <li>
-              <strong>Workbench boundary</strong>
-              <span>No wallet or Walrus client runs in this page; it classifies fixture data only.</span>
+              <strong>Workbench result</strong>
+              <span>Each result names the candidate, disposition, and rule that produced it.</span>
             </li>
           </ul>
         </section>
