@@ -114,17 +114,25 @@ export default function Workbench() {
             and shows which records may enter the working context — before anything reaches an action boundary.
           </p>
 
-          <figure className="hero-device">
+          <figure className="hero-device" aria-hidden="true">
             <div className="device-shell">
-              <Image
-                src="/memory-firewall-filter.png"
-                alt="A blue paper-cut operator routes safe records through a layered filter while hostile shapes remain outside."
-                width={1024}
-                height={1024}
-                priority
-              />
+              <svg className="funnel" viewBox="0 0 320 200" role="presentation">
+                <g className="in">
+                  <rect x="10" y="16" width="70" height="24" rx="10" />
+                  <rect x="10" y="52" width="70" height="24" rx="10" />
+                  <rect x="10" y="88" width="70" height="24" rx="10" />
+                  <rect x="10" y="124" width="70" height="24" rx="10" />
+                  <rect x="10" y="160" width="70" height="24" rx="10" />
+                </g>
+                <path className="cone" d="M110 12 H210 L172 104 V150 H148 V104 Z" />
+                <g className="out">
+                  <rect x="236" y="40" width="74" height="26" rx="12" className="allow" />
+                  <rect x="236" y="80" width="74" height="26" rx="12" className="allow" />
+                  <rect x="236" y="120" width="74" height="26" rx="12" className="deny" />
+                </g>
+              </svg>
             </div>
-            <figcaption>Candidate-set control plane</figcaption>
+            <figcaption>Candidate set in, one canonical decision out</figcaption>
           </figure>
 
           <ul className="hero-orbs">

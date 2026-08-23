@@ -459,3 +459,10 @@ textarea, input, select { border-radius: 22px; box-shadow: var(--shadow-in); bor
 @media (prefers-reduced-motion: reduce) {
   .hero-cta, .clay.run { transition: none; }
 }
+
+/* Clay funnel: candidate set pressed through one resolver. */
+.funnel { display: block; width: 100%; height: auto; }
+.funnel .in rect { fill: #e8eaf6; stroke: #cfd4ee; stroke-width: 1.5; }
+.funnel .cone { fill: #ffffff; stroke: #cbd0ef; stroke-width: 2; filter: drop-shadow(0 6px 10px rgba(60, 60, 120, 0.16)); }
+.funnel .out rect.allow { fill: #d9f7e6; stroke: #7cd7a6; stroke-width: 1.5; }
+.funnel .out rect.deny { fill: #ffe0e6; stroke: #ff9bb0; stroke-width: 1.5; }
