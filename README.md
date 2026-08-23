@@ -152,9 +152,8 @@ add an operator note, and run the canonical resolver. The verdict banner names t
 pipeline shows which stage held the set and under which rule, and the CLI panel prints the exact
 call that reproduces the same decision in your terminal. No wallet, no key, no storage write.
 
-![The containment workbench after a run: an ADMITTED verdict with the canonical outcome string, the with/without prompt comparison, and the per-check trace](./media/lab-verdict.png)
+![Poisoned recall preset: the set is ADMITTED while the nested instruction record note@7 is contained as data only, with the recursive taint scan marked held](./media/lab-verdict.png)
 
-![Memory Firewall lab readout: the without/with prompt comparison and the pipeline stages, with the recursive taint scan holding the set under quarantine:memory-as-command](./docs/lab-verdict.png)
 
 ## 6. Verification
 
@@ -186,7 +185,7 @@ make evidence-check
 | [`docs/PROMPT_TO_TEST.md`](./docs/PROMPT_TO_TEST.md) | each material prompt rule tied to the check that fails when the rule is removed |
 | [`evidence/live-sdk-proof-2026-08-21.json`](./evidence/live-sdk-proof-2026-08-21.json) | an official-SDK write, a terminal non-empty `blob_id`, and a fresh-client exact recall |
 
-The browser lab proves resolver behaviour only. Nothing on that page reads or writes Walrus
+The containment workbench proves resolver behaviour only. Nothing on that page reads or writes Walrus
 Mainnet, so no storage claim is attached to it.
 
 ## 8. Repository guide
@@ -194,9 +193,9 @@ Mainnet, so no storage claim is attached to it.
 ```text
 firewall/           Python record admission and candidate-set resolver
 tests/              deterministic Python regression, prompt-contract and stand checks
-web/                containment workbench lab plus Python/JS fixture parity tests
+web/                containment workbench plus Python/JS fixture parity tests
 evidence/           source lock, synthetic stand, checkpoints and receipt records
-docs/               receipt inventory, replay receipt, prompt-to-proof map, lab screenshot
+docs/               receipt inventory, replay receipt, prompt-to-proof map, bench screenshot
 art/                threat-control visual
 PROMPT.md           copy-pasteable evolved system prompt
 ARTICLE.md          how the failure was found and what the evolution changed
