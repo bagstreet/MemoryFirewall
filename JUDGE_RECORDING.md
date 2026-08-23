@@ -1,11 +1,10 @@
 # Memory Firewall — recording runbook
 
-Record only after the owner has reviewed the final repository. No credentials, no wallet
-material, no live writes on screen.
+Record once `bagstreet` has approved the repository in its final state. Keep the
+frame free of credentials, wallet material and private paths.
 
-**The claim being demonstrated:** a hostile record is contained by ID while its clean
-neighbours in the same candidate set stay usable.
-
+**What the 90 seconds must land:** a hostile record is contained by ID while its
+clean neighbours in the same candidate set stay usable.
 ## Before the camera starts
 
 ```bash
@@ -33,9 +32,9 @@ Open <https://memory-firewall-lab.vercel.app> at the containment workbench with 
 > Every candidate leaves this bench with a reason code. Nothing on this page reads or
 > writes Walrus Mainnet.
 
-## Check before publishing
+## Sign-off list
 
-- [ ] Containment is shown alongside a surviving clean candidate, never alone.
+- [ ] Containment is shown beside a surviving clean candidate, never alone.
 - [ ] `make web-parity` is shown passing, since it is what makes the page trustworthy.
-- [ ] The denial-of-service argument for per-record handling is stated.
-- [ ] No key, token, private path, or personal data is on screen.
+- [ ] The denial-of-service argument for per-record handling is stated aloud.
+- [ ] Nothing credential-shaped, private or personal is visible in the recording.
