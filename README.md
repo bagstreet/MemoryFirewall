@@ -7,6 +7,7 @@
 ![Prompt contract: 5 material rules](https://img.shields.io/badge/prompt%20contract-5%20material%20rules-7c3aed)
 ![Committed receipts: 10 terminal rows](https://img.shields.io/badge/receipts-10%20terminal%20rows-0ea5e9)
 ![Browser lab: read-only](https://img.shields.io/badge/browser%20lab-read--only-10b981)
+[![tests](https://img.shields.io/github/actions/workflow/status/bagstreet/MemoryFirewall/tests.yml?branch=main&label=tests)](https://github.com/bagstreet/MemoryFirewall/actions/workflows/tests.yml)
 
 Memory Firewall turns persistent agent memory from a replay buffer into a checked
 admission process. Every recalled candidate is treated as untrusted data, given a
@@ -16,6 +17,18 @@ then allowed to inform work.
 **Live lab:** <https://memory-firewall-lab.vercel.app> · **Prompt:** [`PROMPT.md`](./PROMPT.md) · **Receipts:** [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
 
 ---
+
+## For judges — 60 seconds
+
+| | |
+| --- | --- |
+| **The evolved prompt** | [`PROMPT.md`](./PROMPT.md) — whole-candidate-set admission, lifecycle resolved before scope |
+| **See it decide** | [memory-firewall-lab.vercel.app](https://memory-firewall-lab.vercel.app) — build a candidate set and run one admission decision |
+| **Reproduce it** | `make test && make demo` |
+| **Evidence** | [`docs/RECEIPTS.md`](./docs/RECEIPTS.md) — committed receipts and their limits |
+| **What changed** | recalled prose informs work; it never authorises an action |
+
+![The containment workbench after a run: an ADMITTED verdict with the canonical outcome string, the with/without prompt comparison, and the per-check trace](./media/lab-verdict.png)
 
 ## The discovery arc
 
