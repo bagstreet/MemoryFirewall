@@ -455,23 +455,23 @@ make synthetic-stand  # replays the pinned candidate-set corpus in isolation
         </section>
 
         <section id="evidence" className="evidence" aria-labelledby="evidence-title">
-          <h2 id="evidence-title">5 · Evidence layer (separate from this workbench)</h2>
+          <h2 id="evidence-title">5 · Receipt cabinet</h2>
           <p className="section-lede">
-            This page proves resolver behaviour only. Storage claims live in the repository, where receipts can be read
-            and re-checked independently.
+            This workbench sorts a candidate set and explains its dispositions. The archived receipt record is a separate
+            artefact, so a browser result is never mistaken for a storage operation.
           </p>
           <ul className="evidence-list">
             <li>
               <strong>evidence/mainnet-receipts.json</strong>
-              <span>Committed receipts with blob identifiers, checked by <code>scripts/check_evidence.py</code>.</span>
+              <span>Blob-identifier receipt entries, checked by <code>scripts/check_evidence.py</code>.</span>
             </li>
             <li>
               <strong>evidence/MAINNET_EVIDENCE.md</strong>
-              <span>How each receipt was produced and how to re-verify it from a cold client.</span>
+              <span>The terminal capture procedure and its cold-client verification steps.</span>
             </li>
             <li>
-              <strong>Browser scope</strong>
-              <span>Nothing on this page reads or writes Walrus Mainnet, so no storage proof is claimed here.</span>
+              <strong>Workbench boundary</strong>
+              <span>No wallet or Walrus client runs in this page; it classifies fixture data only.</span>
             </li>
           </ul>
         </section>
