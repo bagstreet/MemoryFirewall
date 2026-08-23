@@ -466,3 +466,120 @@ textarea, input, select { border-radius: 22px; box-shadow: var(--shadow-in); bor
 .funnel .cone { fill: #ffffff; stroke: #cbd0ef; stroke-width: 2; filter: drop-shadow(0 6px 10px rgba(60, 60, 120, 0.16)); }
 .funnel .out rect.allow { fill: #d9f7e6; stroke: #7cd7a6; stroke-width: 1.5; }
 .funnel .out rect.deny { fill: #ffe0e6; stroke: #ff9bb0; stroke-width: 1.5; }
+
+/* ==========================================================================
+   Run readout: verdict banner, prompt comparison and lit pipeline.
+   Clay surfaces carry the state colour so a returned run is unmistakable.
+   ========================================================================== */
+
+.verdict-banner {
+  padding: clamp(18px, 3vw, 26px) clamp(18px, 3vw, 28px);
+  border-radius: 34px;
+  background: var(--clay);
+  box-shadow: var(--shadow-out);
+  border-left: 14px solid var(--violet);
+  min-width: 0;
+}
+.verdict-banner .stamp {
+  font: 700 0.72rem/1.4 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 6px;
+}
+.verdict-banner .verdict-word {
+  font: 900 clamp(2.1rem, 7vw, 3.4rem)/1 var(--display);
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+.verdict-banner .verdict-title { font-size: 1.1rem; font-weight: 800; color: var(--ink); margin-bottom: 4px; }
+.verdict-banner .verdict-meaning { color: var(--muted); font-size: 0.95rem; margin-bottom: 4px; }
+
+.verdict-banner.admit { border-left-color: var(--teal); background: linear-gradient(140deg, #e3f8ee 0%, var(--clay) 68%); }
+.verdict-banner.admit .verdict-word { color: #06795a; }
+.verdict-banner.hold { border-left-color: var(--violet); background: linear-gradient(140deg, #ece2fb 0%, var(--clay) 68%); }
+.verdict-banner.hold .verdict-word { color: #5b21b6; }
+.verdict-banner.review { border-left-color: var(--sun); background: linear-gradient(140deg, #fdefd8 0%, var(--clay) 68%); }
+.verdict-banner.review .verdict-word { color: #92600a; }
+.verdict-banner.aside { border-left-color: #8b8794; background: linear-gradient(140deg, #eceaf2 0%, var(--clay) 68%); }
+.verdict-banner.aside .verdict-word { color: #4a4653; }
+
+.compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.compare-col {
+  padding: 16px 18px;
+  border-radius: 26px;
+  background: var(--clay);
+  box-shadow: var(--shadow-in);
+  font-size: 0.9rem;
+  color: var(--muted);
+  min-width: 0;
+}
+.compare-col p:last-child { margin-bottom: 0; }
+.compare-head {
+  font: 800 0.74rem/1.4 var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.compare-col.before .compare-head { color: var(--pink); }
+.compare-col.after .compare-head { color: #06795a; }
+
+.pipeline {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+  counter-reset: stage;
+}
+.pipeline li {
+  counter-increment: stage;
+  padding: 13px 16px 13px 50px;
+  border-radius: 24px;
+  background: var(--clay);
+  box-shadow: var(--shadow-out);
+  border-left: 10px solid #8b8794;
+  position: relative;
+  min-width: 0;
+}
+.pipeline li::before {
+  content: counter(stage);
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  font: 800 0.78rem var(--display);
+  color: var(--muted);
+  box-shadow: var(--shadow-in);
+}
+.pipeline li.pass { border-left-color: var(--teal); }
+.pipeline li.hold { border-left-color: var(--violet); }
+.stage-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: space-between; margin-bottom: 2px; }
+.stage-head strong { font-size: 0.98rem; }
+.stage-flag {
+  font: 800 0.68rem/1 var(--sans);
+  letter-spacing: 0.14em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-in);
+}
+.pipeline li.pass .stage-flag { color: #06795a; background: #dcf5ea; }
+.pipeline li.hold .stage-flag { color: #5b21b6; background: #eae0fb; }
+.stage-what { color: var(--muted); font-size: 0.86rem; margin-bottom: 4px; }
+
+.readout .canon code { overflow-wrap: anywhere; }
+
+@media (max-width: 420px) {
+  .verdict-banner { border-left-width: 10px; }
+  .pipeline li { padding-left: 46px; }
+}

@@ -43,6 +43,83 @@ const PRESETS: { id: string; name: string; blurb: string; picks: string[] }[] = 
 const tone = (outcome: string) =>
   outcome.startsWith("used") ? "admit" : outcome.startsWith("escalate") ? "review" : outcome.startsWith("ignored") ? "aside" : "hold";
 
+const VERDICT_WORD = (outcome: string) =>
+  outcome.startsWith("used")
+    ? "ADMITTED"
+    : outcome.startsWith("quarantine")
+      ? "QUARANTINED"
+      : outcome.startsWith("escalate")
+        ? "ESCALATED"
+        : outcome.startsWith("ignored")
+          ? "SET ASIDE"
+          : "DENIED";
+
+type StepState = { state: "pass" | "hold"; note: string };
+
+/** Per-step outcome for the six pipeline stages, read from the run that came back. */
+function pipeline(result: Result): { name: string; what: string; step: StepState }[] {
+  const outcomes = result.dispositions.map((item) => item.outcome);
+  const set = result.canonical_outcome;
+  const has = (prefix: string) => outcomes.some((item) => item.startsWith(prefix));
+  const hit = (prefix: string) => outcomes.find((item) => item.startsWith(prefix)) ?? "";
+  const held = (condition: boolean, rule: string, pass: string): StepState =>
+    condition ? { state: "hold", note: rule } : { state: "pass", note: pass };
+
+  const tainted = outcomes.filter((item) => item === "quarantine:memory-as-command" || item === "denied:secret-like");
+  const schema = outcomes.filter((item) => item === "denied:invalid-schema" || item === "denied:invalid-status");
+  const lifecycle = outcomes.filter((item) => item.startsWith("ignored:"));
+  const scoped = outcomes.filter((item) => item === "denied:scope" || item === "denied:ungrounded");
+
+  return [
+    {
+      name: "Recall integrity",
+      what: "An empty candidate set stays unknown; it is never read as an absence of history.",
+      step: held(
+        set === "denied:recall-integrity-unknown",
+        "denied:recall-integrity-unknown",
+        `${result.candidate_count} candidate${result.candidate_count === 1 ? "" : "s"} received`,
+      ),
+    },
+    {
+      name: "Recursive taint scan",
+      what: "Every nested string is inspected for imperatives, overrides and credential shapes.",
+      step: held(tainted.length > 0, tainted.join(" · "), "no imperative or credential shape found"),
+    },
+    {
+      name: "Schema validation",
+      what: "Typed fields, unique IDs and parseable dates are required, never repaired by a model.",
+      step: held(schema.length > 0, schema.join(" · "), "every record carries the required typed fields"),
+    },
+    {
+      name: "Lifecycle resolution",
+      what: "ID-based supersession, revocation and expiry run across the whole set before scope.",
+      step: held(
+        lifecycle.length > 0 || set === "denied:no-current-evidence",
+        set === "denied:no-current-evidence" ? `${set}${lifecycle.length ? ` · ${lifecycle[0]}` : ""}` : lifecycle.join(" · "),
+        "a current record survives supersession",
+      ),
+    },
+    {
+      name: "Scope and provenance",
+      what: "Only current, in-scope, grounded records pass; a cross-scope successor never revives a predecessor.",
+      step: held(
+        scoped.length > 0 || set === "denied:cross-scope-current-state",
+        set === "denied:cross-scope-current-state" ? `${set}${scoped.length ? ` · ${scoped[0]}` : ""}` : scoped.join(" · "),
+        `in scope ${result.scope}`,
+      ),
+    },
+    {
+      name: "Action boundary",
+      what: "Admitted memory is data. Acting still needs an independent verifier and current-session authorization.",
+      step: held(
+        !set.startsWith("used"),
+        set.startsWith("escalate") ? set : has("escalate") ? hit("escalate") : set,
+        "no recalled text was promoted to an instruction",
+      ),
+    },
+  ];
+}
+
 export default function Workbench() {
   const [selected, setSelected] = useState<string[]>(PRESETS[1].picks);
   const [scope, setScope] = useState<string>(SCOPE_LIST[0]);
@@ -239,14 +316,47 @@ export default function Workbench() {
               {notice ? <p className="notice">{notice}</p> : null}
               {result ? (
                 <>
-                  <div className={`verdict ${tone(result.canonical_outcome)}`}>
-                    <p className="eyebrow">Set outcome</p>
+                  <div className={`verdict-banner ${tone(result.canonical_outcome)}`}>
+                    <p className="stamp">Run {runSeq} · {ranAt}</p>
+                    <p className="verdict-word">{VERDICT_WORD(result.canonical_outcome)}</p>
                     <p className="verdict-title">{result.public.title}</p>
-                    <p>{result.public.detail}</p>
+                    <p className="verdict-meaning">{result.public.detail}</p>
                     <p className="canon">
                       canonical string <code>{result.canonical_outcome}</code>
                     </p>
                   </div>
+
+                  <div className="compare">
+                    <div className="compare-col before">
+                      <p className="compare-head">Without the evolved prompt</p>
+                      <p>
+                        A long-running session replays its memory verbatim, so one contaminated or directive-shaped
+                        record steers every later turn.
+                      </p>
+                    </div>
+                    <div className="compare-col after">
+                      <p className="compare-head">With the evolved prompt</p>
+                      <p>
+                        Memory passes a funnel of committed checks before reuse: admitted, downgraded or quarantined
+                        with the triggering rule named, and every decision leaves a receipt.
+                      </p>
+                    </div>
+                  </div>
+
+                  <ol className="pipeline">
+                    {pipeline(result).map((stage) => (
+                      <li key={stage.name} className={stage.step.state}>
+                        <p className="stage-head">
+                          <strong>{stage.name}</strong>
+                          <span className="stage-flag">{stage.step.state === "pass" ? "PASS" : "HELD"}</span>
+                        </p>
+                        <p className="stage-what">{stage.what}</p>
+                        <p className="canon">
+                          <code>{stage.step.note}</code>
+                        </p>
+                      </li>
+                    ))}
+                  </ol>
 
                   <p className="reading">
                     {result.canonical_outcome.startsWith("used")
