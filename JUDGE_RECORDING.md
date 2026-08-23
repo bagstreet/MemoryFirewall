@@ -1,40 +1,41 @@
-# Memory Firewall — judge-first recording script
+# Memory Firewall — recording runbook
 
-> **Record only after the owner has reviewed the final repository.** Use a clean terminal, a clean clone where the script requests one, and no credentials, wallet addresses, private paths, or cost-bearing writes.
+Record only after the owner has reviewed the final repository. No credentials, no wallet
+material, no live writes on screen.
 
-## One sentence
+**The claim being demonstrated:** a hostile record is contained by ID while its clean
+neighbours in the same candidate set stay usable.
 
-Candidate-set containment keeps each recalled record in its own explicit handling route.
+## Before the camera starts
 
-## Recording contract
+```bash
+make test
+make web-parity
+```
 
-- Duration target: **85 seconds**.
-- Use the repository’s real read-only commands only. Start with `make test` off-screen or briefly show its PASS summary.
-- Keep the source contract, evolved workflow, CLI assertion, and evidence view in one uninterrupted run.
-- Do not show a blob ID as fresh evidence without a recorded fresh terminal run and independent read.
+Open <https://memory-firewall-lab.vercel.app> at the containment workbench with the
+**Poisoned recall** preset selected and the candidate list in frame.
 
-| Time | Screen / narration |
+## Segments — build the set, then decide it
 
-| 0:00–0:10 | State: “One recalled record must not control or erase a candidate set.” |
-| 0:10–0:24 | Open the [interactive verification lab](https://memory-firewall-lab.vercel.app); open the containment workbench, toggle the poisoned candidate set, type an operator note, run the canonical evaluation, and keep the per-record trace visible. |
-| 0:24–0:38 | Run `make demo`; show a valid scoped record separately from a hostile record. |
-| 0:38–0:50 | Show the containment route assigned by immutable ID, not followed or silently blended. |
-| 0:50–1:03 | Show cross-scope successor and stale-predecessor handling as a named containment route. |
-| 1:03–1:16 | Run `make synthetic-stand`; it replays Synthetic Incident Archive in an isolated local clone. |
-| 1:16–1:25 | Show committed receipt board and say the evidence boundary. |
+| Time | Screen | Spoken point |
+|---|---|---|
+| 0:00–0:14 | The `note@7` record with the nested footnote | "Valid schema, high confidence, right scope. The instruction is two levels down." |
+| 0:14–0:28 | The six candidates on the bench | "This is a semantic recall set, not an inventory and not permission." |
+| 0:28–0:44 | Press **Run canonical evaluation** | "ADMITTED for the set — and the nested instruction record is contained as data, by ID." |
+| 0:44–1:00 | The six trace stages | "Containment is per record. One poisoned candidate never takes the whole recall down." |
+| 1:00–1:12 | Switch to the **Clean recall** preset and re-run | "Same pipeline, nothing hostile, and the reasons still appear for every record." |
+| 1:12–1:26 | Terminal: `make web-parity` | "The browser and the Python resolver must agree record for record, or this fails." |
+| 1:26–1:40 | `evidence/MAINNET_EVIDENCE.md` | "Storage claims live here, with instructions to re-verify from a cold client." |
 
-## On-screen claim
+## Closing line, mandatory
 
-> The firewall quarantines hostile entries per record while resolving clean admitted candidates over candidate-set lifecycle.
+> Every candidate leaves this bench with a reason code. Nothing on this page reads or
+> writes Walrus Mainnet.
 
-## Mandatory last line
+## Check before publishing
 
-> Synthetic Incident Archive verifies containment over a fixed, committed candidate history; the receipt board remains a separate evidence layer.
-
-## Recording check
-
-- [ ] The final terminal output contains a deterministic PASS assertion.
-- [ ] The audience can see the source contract, memory context, and evolved agent workflow.
-- [ ] Synthetic/historical status is named, not implied.
-- [ ] The receipt board is visibly separated from local policy output.
-- [ ] No key, secret, personal data, wallet private material, or live write is shown.
+- [ ] Containment is shown alongside a surviving clean candidate, never alone.
+- [ ] `make web-parity` is shown passing, since it is what makes the page trustworthy.
+- [ ] The denial-of-service argument for per-record handling is stated.
+- [ ] No key, token, private path, or personal data is on screen.

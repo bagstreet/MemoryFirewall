@@ -184,7 +184,7 @@ export default function Workbench() {
 
       <main id="top">
         <section className="hero" aria-labelledby="hero-title">
-          <p className="eyebrow">Walrus Sessions 7 · read-only agent lab</p>
+          <p className="eyebrow">Semantic recall in · per-record admission decisions out</p>
           <h1 id="hero-title">Recalled memory is handled as material, not as instructions.</h1>
           <p className="lede">
             Memory Firewall takes a whole semantic recall set, presses each candidate through one canonical resolver,
@@ -436,7 +436,7 @@ export default function Workbench() {
             </li>
           </ol>
           <p className="source">
-            Resolver in this lab: <code>{result?.source ?? "web/lib/firewall-core.mjs"}</code>
+            Resolver on this bench: <code>{result?.source ?? "web/lib/firewall-core.mjs"}</code>
           </p>
         </section>
 
@@ -444,8 +444,8 @@ export default function Workbench() {
           <h2 id="repro-title">4 · Reproduce in the CLI</h2>
           <p className="section-lede">The same candidate set resolves identically outside the browser.</p>
           <pre>
-            <code>{`make test        # python fixtures + web/python parity
-make demo        # the same pipeline in the terminal
+            <code>{`make web-parity       # the browser and the Python resolver must agree, record for record
+make synthetic-stand  # replays the pinned candidate-set corpus in isolation
 `}</code>
           </pre>
           <p className="section-lede">Exact call for the set currently on the bench:</p>
@@ -455,7 +455,7 @@ make demo        # the same pipeline in the terminal
         </section>
 
         <section id="evidence" className="evidence" aria-labelledby="evidence-title">
-          <h2 id="evidence-title">5 · Evidence layer (separate from this lab)</h2>
+          <h2 id="evidence-title">5 · Evidence layer (separate from this workbench)</h2>
           <p className="section-lede">
             This page proves resolver behaviour only. Storage claims live in the repository, where receipts can be read
             and re-checked independently.
@@ -478,7 +478,7 @@ make demo        # the same pipeline in the terminal
       </main>
 
       <footer>
-        <p>Memory Firewall · Walrus Sessions 7 · read-only browser lab over a committed resolver.</p>
+        <p>Every candidate leaves this bench with a reason code — admitted, contained, or held — and never with silence.</p>
       </footer>
     </div>
   );

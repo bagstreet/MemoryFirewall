@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 
 const title = "Memory Firewall — containment workbench for recalled memory";
 const description =
-  "A read-only Walrus Sessions 7 lab: build a semantic recall candidate set and watch one canonical resolver decide which records may enter an agent's working context.";
+  "Build a semantic recall candidate set and watch one canonical resolver decide, record by record, what may enter an agent's working context.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://memory-firewall-lab.vercel.app"),

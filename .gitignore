@@ -1,4 +1,4 @@
-# Session 7 work in progress
+# Build output and local environment
 __pycache__/
 *.py[cod]
 node_modules/

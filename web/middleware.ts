@@ -1,35 +1,26 @@
-import { NextResponse, type NextRequest } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-/**
- * Per-request CSP with a nonce. Next.js injects its bootstrap scripts inline,
- * so a static `script-src 'self'` header leaves the page non-interactive.
- * Next reads the nonce back out of this request header and stamps it onto its
- * own script tags, which keeps the policy strict and the lab usable.
- */
+// One address for one page.
+// Vercel also serves this deployment on generated hosts such as
+// <project>-<account>.vercel.app and <project>-git-<branch>-<account>.vercel.app.
+// Those return the identical document, which splits inbound links and lets a
+// reader cite a URL that is not the one referenced in the repository.
+// Any non-canonical host is answered with a permanent redirect instead.
+const CANONICAL_HOST = "memory-firewall-lab.vercel.app";
+
 export function middleware(request: NextRequest) {
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
-  const csp = [
-    "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`,
-    "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data:",
-    "font-src 'self'",
-    "connect-src 'self'",
-    "object-src 'none'",
-    "frame-ancestors 'none'",
-    "base-uri 'self'",
-    "form-action 'self'",
-  ].join("; ");
-
-  const headers = new Headers(request.headers);
-  headers.set("x-nonce", nonce);
-  headers.set("content-security-policy", csp);
-
-  const response = NextResponse.next({ request: { headers } });
-  response.headers.set("content-security-policy", csp);
-  return response;
+  const host = request.headers.get("host");
+  if (!host || host === CANONICAL_HOST || host.startsWith("localhost") || host.startsWith("127.0.0.1")) {
+    return NextResponse.next();
+  }
+  const target = new URL(request.nextUrl.toString());
+  target.host = CANONICAL_HOST;
+  target.protocol = "https:";
+  target.port = "";
+  return NextResponse.redirect(target, 308);
 }
 
 export const config = {
-  matcher: [{ source: "/((?!_next/static|_next/image|favicon.ico).*)" }],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };

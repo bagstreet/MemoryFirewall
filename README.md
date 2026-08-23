@@ -6,10 +6,10 @@
 ![node](https://img.shields.io/badge/node-18%2B-339933?style=flat)
 ![prompt contract](https://img.shields.io/badge/prompt%20contract-5%20material%20rules-7c3aed?style=flat)
 ![receipts](https://img.shields.io/badge/receipts-10%20terminal%20rows-0ea5e9?style=flat)
-![browser lab](https://img.shields.io/badge/browser%20lab-read--only-10b981?style=flat)
+![containment workbench](https://img.shields.io/badge/containment%20workbench-read--only-10b981?style=flat)
 [![tests](https://img.shields.io/github/actions/workflow/status/bagstreet/MemoryFirewall/tests.yml?branch=main&label=tests&style=flat)](https://github.com/bagstreet/MemoryFirewall/actions/workflows/tests.yml)
 
-**Live lab:** <https://memory-firewall-lab.vercel.app> · **Prompt:** [`PROMPT.md`](./PROMPT.md) · **Receipts:** [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
+**Containment workbench:** <https://memory-firewall-lab.vercel.app> · **Prompt:** [`PROMPT.md`](./PROMPT.md) · **Receipts:** [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
 
 ---
 
