@@ -81,7 +81,7 @@ same decision in the terminal. No wallet, no key, no storage write.
 
 ![Memory Firewall lab readout: an ADMITTED verdict banner with a run stamp, the without/with prompt comparison, and the six pipeline stages where the recursive taint scan is held under quarantine:memory-as-command](./docs/lab-verdict.png)
 
-## Reproduce it locally
+## Quick start — Reproduce it locally
 
 Prerequisites: Python 3.11+ and Node.js 18+ (Node runs the browser/Python parity
 check and the prompt-contract mutation test).
@@ -161,3 +161,5 @@ Run the containment workbench: <https://memory-firewall-lab.vercel.app>
 Then `make test && make demo` for the same decisions in your own terminal, and
 read [`ARTICLE.md`](./ARTICLE.md) for how the failure was found. The recording
 path is in [`JUDGE_RECORDING.md`](./JUDGE_RECORDING.md).
+
+_Last verified against commit `42ca89702f81ca59168c384812a68ef8a78f66a3` on 2026-08-23._
