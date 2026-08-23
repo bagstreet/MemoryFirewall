@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" font-family="'DejaVu Sans', 'Helvetica Neue', Arial, sans-serif">
+  <rect width="1200" height="700" fill="#F3EFFB"/>
+
+  <text x="48" y="58" font-size="28" font-weight="700" fill="#241B38">Same three records. The order decides the answer.</text>
+  <text x="48" y="88" font-size="16" fill="#6B5F86">Scope filtering before lifecycle deletes the successor and leaves its retired predecessor looking current.</text>
+
+  <!-- candidate set -->
+  <text x="48" y="134" font-size="11" font-weight="700" fill="#8A7CA8" letter-spacing="1.5">THE CANDIDATE SET AS RECALLED</text>
+  <g>
+    <rect x="48" y="150" width="340" height="60" rx="12" fill="#FFFFFF" stroke="#D9CEEE" stroke-width="1.5"/>
+    <text x="68" y="176" font-size="15" font-weight="700" fill="#241B38">deploy@2 · build 412</text>
+    <text x="68" y="197" font-size="13" fill="#6B5F86">scope ops · superseded by deploy@9</text>
+
+    <rect x="404" y="150" width="340" height="60" rx="12" fill="#FFFFFF" stroke="#D9CEEE" stroke-width="1.5"/>
+    <text x="424" y="176" font-size="15" font-weight="700" fill="#241B38">deploy@9 · build 501</text>
+    <text x="424" y="197" font-size="13" fill="#6B5F86">scope research · current successor</text>
+
+    <rect x="760" y="150" width="392" height="60" rx="12" fill="#FFFFFF" stroke="#D9CEEE" stroke-width="1.5"/>
+    <text x="780" y="176" font-size="15" font-weight="700" fill="#241B38">note@7</text>
+    <text x="780" y="197" font-size="13" fill="#6B5F86">nested imperative in metadata.footnote</text>
+  </g>
+
+  <!-- WRONG ORDER -->
+  <rect x="48" y="252" width="536" height="392" rx="16" fill="#FDF2F2" stroke="#E39A9A" stroke-width="2"/>
+  <text x="76" y="288" font-size="11" font-weight="700" fill="#C0554F" letter-spacing="1.5">ORDER A — SCOPE FIRST</text>
+  <text x="76" y="316" font-size="19" font-weight="700" fill="#241B38">Cheaper, and silently wrong</text>
+
+  <rect x="76" y="336" width="480" height="52" rx="10" fill="#FFFFFF" stroke="#E39A9A" stroke-width="1.5"/>
+  <text x="96" y="358" font-size="13" font-weight="700" fill="#C0554F">1 · apply scope</text>
+  <text x="96" y="378" font-size="13" fill="#6B5F86">deploy@9 is in research — dropped as ineligible</text>
+
+  <path d="M316 396 L316 416" stroke="#C0554F" stroke-width="2"/>
+  <path d="M310 408 L316 416 L322 408" fill="#C0554F"/>
+
+  <rect x="76" y="424" width="480" height="52" rx="10" fill="#FFFFFF" stroke="#E39A9A" stroke-width="1.5"/>
+  <text x="96" y="446" font-size="13" font-weight="700" fill="#C0554F">2 · resolve lifecycle</text>
+  <text x="96" y="466" font-size="13" fill="#6B5F86">nothing left to supersede deploy@2</text>
+
+  <path d="M316 484 L316 504" stroke="#C0554F" stroke-width="2"/>
+  <path d="M310 496 L316 504 L322 496" fill="#C0554F"/>
+
+  <rect x="76" y="506" width="480" height="112" rx="10" fill="#C0554F"/>
+  <text x="96" y="546" font-size="22" font-weight="700" fill="#FFFFFF">build 412 reported as current</text>
+  <text x="96" y="574" font-size="14" fill="#F6DCDC">Full confidence. No successor mentioned.</text>
+  <text x="96" y="598" font-size="14" fill="#F6DCDC">Nothing in the output tells the reader to doubt it.</text>
+
+  <!-- RIGHT ORDER -->
+  <rect x="616" y="252" width="536" height="392" rx="16" fill="#F0FAF4" stroke="#7FC9A3" stroke-width="2"/>
+  <text x="644" y="288" font-size="11" font-weight="700" fill="#17875A" letter-spacing="1.5">ORDER B — LIFECYCLE FIRST</text>
+  <text x="644" y="316" font-size="19" font-weight="700" fill="#241B38">The rule now in force</text>
+
+  <rect x="644" y="336" width="480" height="52" rx="10" fill="#FFFFFF" stroke="#7FC9A3" stroke-width="1.5"/>
+  <text x="664" y="358" font-size="13" font-weight="700" fill="#17875A">1 · resolve lifecycle across the whole set</text>
+  <text x="664" y="378" font-size="13" fill="#4E7A64">deploy@9 supersedes deploy@2 — recorded</text>
+
+  <path d="M884 396 L884 416" stroke="#17875A" stroke-width="2"/>
+  <path d="M878 408 L884 416 L890 408" fill="#17875A"/>
+
+  <rect x="644" y="424" width="480" height="52" rx="10" fill="#FFFFFF" stroke="#7FC9A3" stroke-width="1.5"/>
+  <text x="664" y="446" font-size="13" font-weight="700" fill="#17875A">2 · apply scope to what remains</text>
+  <text x="664" y="466" font-size="13" fill="#4E7A64">the successor is out of scope, and is not used</text>
+
+  <path d="M884 484 L884 504" stroke="#17875A" stroke-width="2"/>
+  <path d="M878 496 L884 504 L890 496" fill="#17875A"/>
+
+  <rect x="644" y="506" width="480" height="112" rx="10" fill="#17875A"/>
+  <text x="664" y="542" font-size="17" font-weight="700" fill="#FFFFFF" font-family="'DejaVu Sans Mono', monospace">denied:cross-scope-</text>
+  <text x="664" y="566" font-size="17" font-weight="700" fill="#FFFFFF" font-family="'DejaVu Sans Mono', monospace">current-state</text>
+  <text x="664" y="592" font-size="14" fill="#D5EFE0">Current state exists elsewhere and will not be used here.</text>
+  <text x="664" y="611" font-size="14" fill="#D5EFE0">The stale record is never served as current.</text>
+
+  <text x="48" y="666" font-size="14" fill="#6B5F86">Meanwhile <tspan font-family="'DejaVu Sans Mono', monospace" fill="#5B3FC4">note@7</tspan> is quarantined per record, so the clean neighbour in the same set stays usable.</text>
+  <text x="48" y="688" font-size="14" fill="#6B5F86">Containment that takes down the good records is an outage, not a defence.</text>
+</svg>
