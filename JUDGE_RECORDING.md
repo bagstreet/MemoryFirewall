@@ -16,7 +16,7 @@ Candidate-set containment keeps each recalled record in its own explicit handlin
 | Time | Screen / narration |
 
 | 0:00–0:10 | State: “One recalled record must not control or erase a candidate set.” |
-| 0:10–0:24 | Open the [interactive verification lab](https://memory-firewall-pi.vercel.app); open the containment workbench, toggle the poisoned candidate set, type an operator note, run the canonical evaluation, and keep the per-record trace visible. |
+| 0:10–0:24 | Open the [interactive verification lab](https://memory-firewall-lab.vercel.app); open the containment workbench, toggle the poisoned candidate set, type an operator note, run the canonical evaluation, and keep the per-record trace visible. |
 | 0:24–0:38 | Run `make demo`; show a valid scoped record separately from a hostile record. |
 | 0:38–0:50 | Show the containment route assigned by immutable ID, not followed or silently blended. |
 | 0:50–1:03 | Show cross-scope successor and stale-predecessor handling as a named containment route. |

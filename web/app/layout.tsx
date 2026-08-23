@@ -6,7 +6,7 @@ const description =
   "A read-only Walrus Sessions 7 lab: build a semantic recall candidate set and watch one canonical resolver decide which records may enter an agent's working context.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://memory-firewall-pi.vercel.app"),
+  metadataBase: new URL("https://memory-firewall-lab.vercel.app"),
   title,
   description,
   icons: { icon: [{ url: "/icon.svg", type: "image/svg+xml" }], apple: "/icon.svg" },
