@@ -132,7 +132,7 @@ make demo
 material prompt rules and requires the contract to fail without it, the three
 Python suites, the evidence checker, a secret scan over tracked content, and a
 parity test that compares the browser resolver core against the Python one. The
-browser lab at <https://memory-firewall-pi.vercel.app> prints the exact CLI call
+browser lab at <https://memory-firewall-lab.vercel.app> prints the exact CLI call
 for whatever set is on the bench, so any decision on the page can be re-run
 locally.
 

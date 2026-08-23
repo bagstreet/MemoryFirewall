@@ -13,7 +13,7 @@ admission process. Every recalled candidate is treated as untrusted data, given 
 disposition by immutable ID, resolved across the whole candidate set, and only
 then allowed to inform work.
 
-**Live lab:** <https://memory-firewall-pi.vercel.app> · **Prompt:** [`PROMPT.md`](./PROMPT.md) · **Receipts:** [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
+**Live lab:** <https://memory-firewall-lab.vercel.app> · **Prompt:** [`PROMPT.md`](./PROMPT.md) · **Receipts:** [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
 
 ---
 
@@ -73,7 +73,7 @@ domain of the memory boundary:
 
 ## See it decide
 
-Open [the containment workbench](https://memory-firewall-pi.vercel.app), build a
+Open [the containment workbench](https://memory-firewall-lab.vercel.app), build a
 candidate set, add an operator note, and run the canonical resolver. The verdict
 banner names the decision, the pipeline shows which of the six stages held the set
 and under which rule, and the CLI panel prints the exact call that reproduces the
@@ -156,7 +156,7 @@ broken resolver or a parity mismatch is a defect and fails verification.
 
 ## Next step
 
-Run the containment workbench: <https://memory-firewall-pi.vercel.app>
+Run the containment workbench: <https://memory-firewall-lab.vercel.app>
 
 Then `make test && make demo` for the same decisions in your own terminal, and
 read [`ARTICLE.md`](./ARTICLE.md) for how the failure was found. The recording
