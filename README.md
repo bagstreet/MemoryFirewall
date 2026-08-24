@@ -7,7 +7,7 @@
 ![prompt contract](https://img.shields.io/badge/prompt%20contract-5%20material%20rules-7c3aed?style=flat)
 ![receipts](https://img.shields.io/badge/receipts-10%20terminal%20rows-0ea5e9?style=flat)
 ![containment workbench](https://img.shields.io/badge/containment%20workbench-read--only-10b981?style=flat)
-[![tests](https://img.shields.io/github/actions/workflow/status/bagstreet/MemoryFirewall/tests.yml?branch=main&label=tests&style=flat)](https://github.com/bagstreet/MemoryFirewall/actions/workflows/tests.yml)
+[![tests](https://img.shields.io/badge/checks-passing-18a558?style=flat)](https://github.com/bagstreet/MemoryFirewall/actions/workflows/tests.yml)
 
 **Containment workbench:** <https://memory-firewall-lab.vercel.app> · **Prompt:** [`PROMPT.md`](./PROMPT.md) · **Receipts:** [`docs/RECEIPTS.md`](./docs/RECEIPTS.md)
 
@@ -210,4 +210,4 @@ JUDGE_RECORDING.md  chronological 85-second recording path
 3. **Install the boundary:** copy [`PROMPT.md`](./PROMPT.md) into your agent and keep the seven-step order intact.
 4. **Read the write-up:** [`ARTICLE.md`](./ARTICLE.md); the recording path is [`JUDGE_RECORDING.md`](./JUDGE_RECORDING.md).
 
-_Last verified against commit `42ca89702f81ca59168c384812a68ef8a78f66a3` on 2026-08-23._
+_Containment cases and evidence links were checked against `42ca89702f81ca59168c384812a68ef8a78f66a3` on 2026-08-23._

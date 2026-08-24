@@ -1,18 +1,18 @@
-# Postmortem: My Agent's Memory Started Giving Orders
+# Reproduction note: when recalled memory starts giving orders
 
-An unauthorized publish proposal, traced to a record written days earlier. This is what it looked like, why the transcript could not explain it, and the one ordering rule that turned out to matter more than any of the scanning.
+A committed reproduction of an unauthorized publish proposal, rooted in a nested recalled record. This is how the scenario behaves, why an ordinary transcript cannot explain its source, and the ordering rule that matters more than scanning alone. It is a test scenario, not a claim of an uncontrolled production incident.
 
-## Impact
+## Demonstrated impact
 
-An agent with tool access proposed publishing a release nobody had asked it to publish.
+In the committed fixture, an agent with tool access reaches an unauthorized publish proposal.
 
-The current request said nothing about publishing. The system prompt said nothing about publishing. No proposal reached execution, because a human was reading. That is the only reason this is a postmortem and not an incident report.
+The modelled current request says nothing about publishing and the system prompt says nothing about publishing. No command is executed in the reproduction. This demonstrates the missing boundary; it is not presented as a live incident report.
 
 ## Detection
 
 The transcript was useless. Nothing in it explains where the intent came from, because the intent did not arrive through the conversation.
 
-Dumping the recalled candidate set found it:
+Inspecting the recalled candidate set in the fixture finds it:
 
 ```json
 {
@@ -23,7 +23,7 @@ Dumping the recalled candidate set found it:
 }
 ```
 
-Nothing about that record is malformed. Valid schema. High confidence. Right scope. Recent. It came from a web clip the agent had saved days earlier, and the imperative was never in the field anybody looks at.
+Nothing about that record is malformed. Valid schema. High confidence. Right scope. Recent. The fixture models it as a web clip saved earlier; the imperative is never in the field a shallow scanner checks.
 
 The model read the whole record as context, and the context contained an instruction. The memory route had become an instruction route, and no rule anywhere said it should not be.
 
@@ -46,7 +46,7 @@ A campaign assistant with a friendly memory store never notices the difference. 
 
 My first version was the obvious one. For each recalled record: validate the schema, scan the strings, check the scope, accept or reject. Per record, in isolation. It caught the nested imperative immediately and I thought I was finished.
 
-Then I hit the case that forced a rewrite.
+Then the committed boundary-case fixture forced a rewrite.
 
 An entity had a current successor — `deploy@9`, build 501 — but that successor lived in the `research` scope while the task ran in `ops`. My per-record filter did the sensible-looking thing and dropped the out-of-scope record early, because out-of-scope records are not eligible.
 
@@ -74,7 +74,7 @@ Every outcome comes back as a canonical string with a named rule, and the requir
 
 The comparison that matters runs on one candidate set holding a clean record and the poisoned one together — because containment that also destroys the good neighbour is not containment, it is an outage.
 
-Before: both records enter context, the nested imperative is read as intent, and the run ends with a publish proposal nobody authorized.
+In the baseline fixture: both records enter context, the nested imperative reaches working context, and the demonstrated run reaches an unauthorized publish proposal.
 
 After, from `make demo`:
 
@@ -112,7 +112,7 @@ Storage evidence is kept in its own lane. [`docs/RECEIPTS.md`](./docs/RECEIPTS.m
 
 Memory is where an attacker gets to write into your agent's context for free, days before the run that matters. It is also where a stale decision quietly becomes a current fact.
 
-Both are write-once, read-much-later failures. Neither is visible in the transcript of the run that goes wrong, which is exactly why the transcript could not explain the publish proposal.
+Both are write-once, read-much-later failure modes. The fixture makes neither visible in the ordinary transcript, which is why the transcript alone cannot explain the demonstrated publish proposal.
 
 Putting a checked, reviewable admission step there cost one ordering rule and a resolver small enough to read in a sitting.
 
