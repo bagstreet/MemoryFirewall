@@ -152,7 +152,7 @@ add an operator note, and run the canonical resolver. The verdict banner names t
 pipeline shows which stage held the set and under which rule, and the CLI panel prints the exact
 call that reproduces the same decision in your terminal. No wallet, no key, no storage write.
 
-![Poisoned recall preset: the set is ADMITTED while the nested instruction record note@7 is contained as data only, with the recursive taint scan marked held](./media/lab-verdict.png)
+![Poisoned recall preset: the set is ADMITTED while the nested instruction record note@7 is contained as data only, with the recursive taint scan marked held](./media/containment-admitted.png)
 
 
 ## 6. Verification
