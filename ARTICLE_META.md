@@ -5,10 +5,10 @@ the named owner.
 
 ## Medium fields
 
-- **Title:** Postmortem: My Agent’s Memory Started Giving Orders
-- **Subtitle:** An unauthorized publish proposal, traced to a record written days earlier, and the one ordering rule behind the fix.
-- **SEO title (<=60 chars where possible):** Postmortem: My Agent’s Memory Started Giving Orders
-- **SEO description (meta, ~155 chars):** A valid, in-scope, high-confidence record carried an imperative two levels down in a metadata field. Why memory needs admission control, not just retrieval.
+- **Title:** When a Recalled Record Starts Giving Orders
+- **Subtitle:** A committed reproduction of an unauthorized publish proposal, and the ordering rule behind the fix.
+- **SEO title (<=60 chars where possible):** When a Recalled Record Starts Giving Orders
+- **SEO description (meta, ~155 chars):** A committed test scenario puts an imperative two levels down in a valid-looking record. Why agent memory needs admission control, not just retrieval.
 - **Tags (max 5):** AI Agents, Prompt Injection, AI Safety, Walrus, Software Engineering
 - **Cover image:** [`brand/article-banner.png`](./brand/article-banner.png) — 1200x630
 - **Canonical link if syndicated:** https://github.com/bagstreet/MemoryFirewall/blob/main/ARTICLE.md

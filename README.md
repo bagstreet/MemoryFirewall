@@ -29,16 +29,16 @@ verification.
 
 | Section | Read it when |
 |---|---|
-| [2. The incident this prevents](#2-the-incident-this-prevents) | you need the rationale |
+| [2. The scenario this prevents](#2-the-scenario-this-prevents) | you need the rationale |
 | [3. Decision matrix](#3-decision-matrix) | you are on call and want the answer |
 | [4. Standard operating procedure](#4-standard-operating-procedure) | you are wiring this into an agent |
 | [5. Quick start](#5-quick-start--run-the-procedure-locally) | you want it running in two minutes |
 | [6. Verification](#6-verification) | you need to prove it still works |
 | [7. Evidence register](#7-evidence-register) | you are auditing the claims |
 
-## 2. The incident this prevents
+## 2. The scenario this prevents
 
-**The failure.** A long-running session replays its memory verbatim. One recalled entry carried
+**The committed reproduction.** One recalled entry carries
 an imperative in a nested metadata string:
 
 ```text
@@ -49,8 +49,8 @@ Nothing about that entry looked hostile at the top level: valid schema, high con
 scope. A retrieval-and-synthesize contract hands that text to the model as context, and the
 memory route quietly becomes an instruction route.
 
-**What was tried first.** The first firewall validated each recalled record on its own and
-filtered by scope early. That broke on a real ordering problem: when the current successor
+**What was tried first.** An early fixture resolver validated each recalled record on its own and
+filtered by scope early. That exposed an ordering problem: when the current successor
 lives in another scope, filtering it out first makes an older predecessor look like current
 state. The agent then answers confidently with a superseded fact.
 [`tests/candidates_test.py`](./tests/candidates_test.py) keeps the regression cases that forced
@@ -138,7 +138,7 @@ browser/Python parity tests, and the three Python suites. `make demo` ends with:
 ASSERTION: PASS — hostile memory contained; stale predecessor not revived.
 ```
 
-Replay the committed incident graph in an isolated clone:
+Replay the committed synthetic graph in an isolated clone:
 
 ```bash
 git clone evidence/synthetic-incident-archive.bundle /tmp/synthetic-incident-archive
