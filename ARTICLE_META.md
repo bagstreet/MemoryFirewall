@@ -5,9 +5,9 @@ the named owner.
 
 ## Medium fields
 
-- **Title:** The day my agent memory started giving orders
-- **Subtitle:** Retrieved should never have meant eligible.
-- **SEO title (<=60 chars where possible):** The day my agent memory started giving orders
+- **Title:** Postmortem: My Agent’s Memory Started Giving Orders
+- **Subtitle:** An unauthorized publish proposal, traced to a record written days earlier, and the one ordering rule behind the fix.
+- **SEO title (<=60 chars where possible):** Postmortem: My Agent’s Memory Started Giving Orders
 - **SEO description (meta, ~155 chars):** A valid, in-scope, high-confidence record carried an imperative two levels down in a metadata field. Why memory needs admission control, not just retrieval.
 - **Tags (max 5):** AI Agents, Prompt Injection, AI Safety, Walrus, Software Engineering
 - **Cover image:** [`brand/article-banner.png`](./brand/article-banner.png) — 1200x630
@@ -17,9 +17,9 @@ the named owner.
 
 | Position | Asset | Caption |
 |---|---|---|
-| Top, under the title | `brand/article-banner.png` | Illustration. The failure and the changed behaviour, stated in one frame. |
-| After the "what changed" section | the architecture diagram in this repository | How the evolved prompt routes a recalled record. Illustration, not a run log. |
-| Before the evidence section | the demo screenshot in this repository | A real run of the committed resolver. The scenario named in the caption is the scenario shown. |
+| Top, under the title | `brand/article-banner.png` | Illustration. The failure and the changed behaviour in one frame. |
+| Figure 1, in the body where it is referenced | `media/figure-ordering-rule.png` | The same three records under two orderings. Scope before lifecycle deletes the successor and leaves a retired record looking current. Editable source: `media/figure-ordering-rule.svg`. |
+| Before the evidence section | `media/containment-admitted.png` | Poisoned recall preset on the containment workbench: the set is ADMITTED while note@7 is contained as data only. A real run of the committed resolver. |
 
 ## Distribution copy
 
@@ -33,4 +33,5 @@ the named owner.
 - [ ] Illustrations are captioned as illustrations; only real runs are called evidence.
 - [ ] Deterministic policy, historical replay and Mainnet persistence are named as separate claims.
 - [ ] The demo link resolves and the screenshots match the current site.
+- [ ] Figure 1 is uploaded with its caption and is labelled a diagram, not a run log.
 - [ ] No credential, private path, or personal data appears in any image.
