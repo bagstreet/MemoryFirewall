@@ -5,7 +5,7 @@
   "stand_bundle": "evidence/synthetic-incident-archive.bundle",
   "stand_bundle_sha256": "469fe10c6f9113f72599a0f8bf2601be105afa75ef3be0388e5c88507a40faff",
   "author": "bagstreet <bagstreet.by@gmail.com>",
-  "prompt_sha256": "d2970f9ffebd9b459b8ef6d9afa89422af40e3570f3190361436f5419b1aef8a",
+  "prompt_sha256": "fbc4eb5c3842d44e6cdfee4b404ae6774dc104170d2a5249be5e95c5b1a4ef01",
   "input_path": "archive/records.json",
   "scope": "ops-lab",
   "chain": [
